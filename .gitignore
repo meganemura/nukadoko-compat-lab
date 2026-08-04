@@ -1,0 +1,10 @@
+# main track: nukadoko itself, cloned + built locally by harness/run-target.mjs.
+# Not git-managed here (unlike corpora/, which uses submodules) — this is a
+# throwaway build of whatever commit is currently on nukadoko's main branch.
+/.nukadoko-main-clone/
+
+# per-run working copies (corpus subpath copy + import rewrite + installed
+# nukadoko), recreated by harness/run-target.mjs on every invocation.
+/.nukadoko-work/
+
+/node_modules/

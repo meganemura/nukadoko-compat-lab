@@ -1,0 +1,18 @@
+{
+  "targets": [
+    {
+      "name": "esm-node",
+      "submodule": "cucumber-js-examples",
+      "subpath": "esm-node",
+      "featureGlob": "features/**/*.feature",
+      "expectedScenarioCount": 1
+    },
+    {
+      "name": "typescript-node-esm",
+      "submodule": "cucumber-js-examples",
+      "subpath": "typescript-node-esm",
+      "featureGlob": "features/**/*.feature",
+      "expectedScenarioCount": 1
+    }
+  ]
+}
