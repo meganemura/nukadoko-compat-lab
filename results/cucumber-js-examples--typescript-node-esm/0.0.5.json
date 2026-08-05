@@ -1,9 +1,9 @@
 {
   "targetId": "cucumber-js-examples--typescript-node-esm",
   "targetName": "typescript-node-esm",
-  "track": "main",
-  "generatedAt": "2026-08-04T22:31:06.237Z",
-  "commitSha": "6810655a67407f80d2a5bf3667db08eaf3a9cc72",
+  "track": "npm",
+  "generatedAt": "2026-08-04T22:16:07.977Z",
+  "nukadokoVersion": "0.0.5",
   "featureFile": "features/greeting.feature",
   "expectedScenarioCount": 1,
   "run": {
@@ -13,26 +13,26 @@
     "scenarioCount": 1,
     "scenarios": [
       {
-        "scenario_id": "scn-20260805-073105-qjcq",
-        "run_id": "run-20260805-073104-rb6g",
+        "scenario_id": "scn-20260805-071606-esxt",
+        "run_id": "run-20260805-071606-0dea",
         "feature": "features/greeting.feature",
         "scenario": "Say hello",
         "line": 3,
         "status": "passed",
         "environment": "default",
         "session": null,
-        "started_at": "2026-08-04T22:31:05.022Z",
-        "finished_at": "2026-08-04T22:31:05.025Z",
+        "started_at": "2026-08-04T22:16:06.711Z",
+        "finished_at": "2026-08-04T22:16:06.713Z",
         "steps": [
           {
             "text": "the greeter says hello",
             "status": "passed",
-            "receipt": "rcpt-20260805-073105-o98v"
+            "receipt": "rcpt-20260805-071606-on07"
           },
           {
             "text": "I should have heard \"hello\"",
             "status": "passed",
-            "receipt": "rcpt-20260805-073105-qb95"
+            "receipt": "rcpt-20260805-071606-8oxd"
           }
         ],
         "hooks": [],
@@ -41,7 +41,7 @@
           "clean": false
         },
         "evidence": {
-          "dir": ".nukadoko/scenarios/scn-20260805-073105-qjcq",
+          "dir": ".nukadoko/scenarios/scn-20260805-071606-esxt",
           "screenshots": []
         }
       }

@@ -1,0 +1,72 @@
+{
+  "targetId": "cucumber7-ts-starter--.",
+  "targetName": "cucumber7-ts-starter",
+  "track": "main",
+  "generatedAt": "2026-08-04T22:50:06.428Z",
+  "commitSha": "6810655a67407f80d2a5bf3667db08eaf3a9cc72",
+  "featureFile": "features/simple-maths.feature",
+  "expectedScenarioCount": 2,
+  "run": {
+    "command": "nuka run features/simple-maths.feature",
+    "note": "no --json (run has none — see this file's own header); stdout is one JSON scenario record per line, parsed below",
+    "exitCode": 1,
+    "scenarioCount": 0,
+    "scenarios": [],
+    "stderr": "require is not defined in ES module scope, you can use import instead\n",
+    "pass": false
+  },
+  "check": {
+    "command": "nuka check --json",
+    "exitCode": 1,
+    "json": {
+      "errors": [
+        {
+          "code": "step-file-import-failed",
+          "message": "require is not defined in ES module scope, you can use import instead",
+          "file": "env/set-environment-variables.ts"
+        },
+        {
+          "code": "step-file-import-failed",
+          "message": "Cannot find package 'expect' imported from /Users/meganemura/src/github.com/meganemura/nukadoko-compat-lab/.nukadoko-work/cucumber7-ts-starter--./main/step-definitions/maths/simple-maths-steps.ts",
+          "file": "step-definitions/maths/simple-maths-steps.ts"
+        }
+      ],
+      "warnings": [
+        {
+          "code": "undefined-step-check-suppressed",
+          "message": "Suppressed 12 undefined-step issues because 2 step files could not be read. undefined-step judgment is on hold until the unreadable glue is fixed"
+        }
+      ]
+    },
+    "stderr": "",
+    "pass": false
+  },
+  "tend": {
+    "command": "nuka tend --json",
+    "exitCode": 0,
+    "json": {
+      "errors": [],
+      "notes": [],
+      "summary": {
+        "typedSteps": 0,
+        "compatSteps": 0,
+        "compatStepNames": [],
+        "rationale": {
+          "declared": 0,
+          "total": 0
+        },
+        "describe": {
+          "declared": 0,
+          "total": 0
+        },
+        "scannedFeatureDirs": [
+          "."
+        ],
+        "readOnlySteps": 0
+      }
+    },
+    "stderr": "",
+    "pass": true
+  },
+  "pass": false
+}

@@ -1,3 +1,6 @@
 [submodule "corpora/cucumber-js-examples"]
 	path = corpora/cucumber-js-examples
 	url = https://github.com/cucumber/cucumber-js-examples.git
+[submodule "corpora/cucumber7-ts-starter"]
+	path = corpora/cucumber7-ts-starter
+	url = https://github.com/hdorgeval/cucumber7-ts-starter.git

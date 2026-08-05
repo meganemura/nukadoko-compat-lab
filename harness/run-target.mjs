@@ -123,10 +123,17 @@ function prepareWorkingCopy(target, track) {
   // nuka init's own template (src/cli/init.ts's configTemplate) with every
   // field left at its default — esm-node's own layout already matches
   // nukadoko's default `featuresDir: "features"` (docs/migration.md "Stage
-  // 0"), and this target makes no baseURL-reaching calls.
+  // 0"), and this target makes no baseURL-reaching calls. `target.featuresDir`
+  // is an optional targets.json field for a corpus whose features/step-
+  // definitions/hooks/world/env live in separate top-level directories
+  // rather than under a single conventional `features/` tree (e.g.
+  // cucumber7-ts-starter) — only written into the generated config when the
+  // target actually sets it, so every other target keeps getting the plain
+  // `defineConfig({})` it always has.
+  const configBody = target.featuresDir === undefined ? "{}" : `{\n  featuresDir: ${JSON.stringify(target.featuresDir)},\n}`;
   writeFileSync(
     path.join(workDir, "nukadoko.config.ts"),
-    'import { defineConfig } from "nukadoko";\n\nexport default defineConfig({});\n',
+    `import { defineConfig } from "nukadoko";\n\nexport default defineConfig(${configBody});\n`,
   );
 
   const changedFiles = rewriteImports(workDir);

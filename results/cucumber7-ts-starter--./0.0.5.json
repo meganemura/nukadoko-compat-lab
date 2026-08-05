@@ -1,0 +1,33 @@
+{
+  "targetId": "cucumber7-ts-starter--.",
+  "targetName": "cucumber7-ts-starter",
+  "track": "npm",
+  "generatedAt": "2026-08-04T22:54:54.242Z",
+  "nukadokoVersion": "0.0.5",
+  "featureFile": "features/simple-maths.feature",
+  "expectedScenarioCount": 2,
+  "run": {
+    "command": "nuka run features/simple-maths.feature",
+    "note": "no --json (run has none — see this file's own header); stdout is one JSON scenario record per line, parsed below",
+    "exitCode": 1,
+    "scenarioCount": 0,
+    "scenarios": [],
+    "stderr": "require is not defined in ES module scope, you can use import instead\n",
+    "pass": false
+  },
+  "check": {
+    "command": "nuka check --json",
+    "exitCode": 13,
+    "json": null,
+    "stderr": "Warning: Detected unsettled top-level await at file:///Users/meganemura/src/github.com/meganemura/nukadoko-compat-lab/.nukadoko-work/cucumber7-ts-starter--./npm/node_modules/nukadoko/dist/cli.js:6\nconst exitCode = await runCli(process.argv.slice(2));\n                 ^\n\n\n\n",
+    "pass": false
+  },
+  "tend": {
+    "command": "nuka tend --json",
+    "exitCode": 13,
+    "json": null,
+    "stderr": "Warning: Detected unsettled top-level await at file:///Users/meganemura/src/github.com/meganemura/nukadoko-compat-lab/.nukadoko-work/cucumber7-ts-starter--./npm/node_modules/nukadoko/dist/cli.js:6\nconst exitCode = await runCli(process.argv.slice(2));\n                 ^\n\n\n\n",
+    "pass": false
+  },
+  "pass": false
+}

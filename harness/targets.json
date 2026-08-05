@@ -13,6 +13,14 @@
       "subpath": "typescript-node-esm",
       "featureGlob": "features/**/*.feature",
       "expectedScenarioCount": 1
+    },
+    {
+      "name": "cucumber7-ts-starter",
+      "submodule": "cucumber7-ts-starter",
+      "subpath": ".",
+      "featureGlob": "features/**/*.feature",
+      "featuresDir": ".",
+      "expectedScenarioCount": 2
     }
   ]
 }
