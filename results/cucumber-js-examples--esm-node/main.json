@@ -2,78 +2,70 @@
   "targetId": "cucumber-js-examples--esm-node",
   "targetName": "esm-node",
   "track": "main",
-  "generatedAt": "2026-08-04T22:30:50.525Z",
-  "commitSha": "6810655a67407f80d2a5bf3667db08eaf3a9cc72",
+  "generatedAt": "2026-08-16T01:07:03.622Z",
+  "commitSha": "450d068ae8b1e86d4d537a04dc91864a33aa7219",
   "featureFile": "features/greeting.feature",
   "expectedScenarioCount": 1,
   "run": {
     "command": "nuka run features/greeting.feature",
     "note": "no --json (run has none — see this file's own header); stdout is one JSON scenario record per line, parsed below",
-    "exitCode": 1,
+    "exitCode": 0,
     "scenarioCount": 1,
     "scenarios": [
       {
-        "scenario_id": "scn-20260805-073049-c1fp",
-        "run_id": "run-20260805-073049-ex3b",
+        "scenario_id": "scn-20260816-100702-vlyn",
+        "run_id": "run-20260816-100702-qpof",
         "feature": "features/greeting.feature",
         "scenario": "Say hello",
         "line": 3,
-        "status": "failed",
+        "status": "passed",
         "environment": "default",
         "session": null,
-        "started_at": "2026-08-04T22:30:49.321Z",
-        "finished_at": "2026-08-04T22:30:49.322Z",
+        "started_at": "2026-08-16T01:07:02.868Z",
+        "finished_at": "2026-08-16T01:07:02.872Z",
         "steps": [
           {
             "text": "the greeter says hello",
-            "status": "undefined",
-            "receipt": null,
-            "error": {
-              "message": "No step definition matches \"the greeter says hello\"; run `nuka scaffold <name>` to add one"
-            }
+            "status": "passed",
+            "record": "step-20260816-100702-uzea"
           },
           {
             "text": "I should have heard \"hello\"",
-            "status": "skipped",
-            "receipt": null
+            "status": "passed",
+            "record": "step-20260816-100702-jupk"
           }
         ],
         "hooks": [],
         "git": {
-          "commit": "f64bfd6bd7b59b8045a855997b80c8d446c373f3",
+          "commit": "e9d53cea65cdc339ae02c31bdeb8de89d52e6842",
           "clean": false
         },
         "evidence": {
-          "dir": ".nukadoko/scenarios/scn-20260805-073049-c1fp",
+          "dir": ".nukadoko/records/scenarios/scn-20260816-100702-vlyn",
           "screenshots": []
         }
       }
     ],
-    "stderr": "",
-    "pass": false
+    "stderr": "scenario 1/1  features/greeting.feature:3  Say hello\n  step 1/2  ok  0.0s  the greeter says hello\n  step 2/2  ok  0.0s  I should have heard \"hello\"\nsteps     .nukadoko/records/steps/      2\nscenarios .nukadoko/records/scenarios/  1\nallure    .nukadoko/export/allure-results/\nmessages  .nukadoko/export/messages.ndjson\n1 scenario: 1 passed, 0 failed  (0s)\n",
+    "pass": true
   },
   "check": {
     "command": "nuka check --json",
-    "exitCode": 1,
+    "exitCode": 0,
     "json": {
-      "errors": [
+      "errors": [],
+      "warnings": [
         {
-          "code": "undefined-step",
-          "message": "No step definition matches \"the greeter says hello\"; run `nuka scaffold <name>` to add one",
+          "code": "then-compat-step",
+          "message": "Step \"compat: I should have heard {string}\" is a compat step bound in Then position. Compat steps have no mutates declaration to trust here; this is a static coverage gap, not something the tool caught at run time (docs/spec.md \"Compat steps\", \"Keyword semantics\")",
           "file": "features/greeting.feature",
-          "line": 3
-        },
-        {
-          "code": "undefined-step",
-          "message": "No step definition matches \"I should have heard \"hello\"\"; run `nuka scaffold <name>` to add one",
-          "file": "features/greeting.feature",
-          "line": 3
+          "line": 3,
+          "step": "compat: I should have heard {string}"
         }
-      ],
-      "warnings": []
+      ]
     },
     "stderr": "",
-    "pass": false
+    "pass": true
   },
   "tend": {
     "command": "nuka tend --json",
@@ -83,8 +75,11 @@
       "notes": [],
       "summary": {
         "typedSteps": 0,
-        "compatSteps": 0,
-        "compatStepNames": [],
+        "compatSteps": 2,
+        "compatStepNames": [
+          "compat: the greeter says hello",
+          "compat: I should have heard {string}"
+        ],
         "rationale": {
           "declared": 0,
           "total": 0
@@ -102,5 +97,5 @@
     "stderr": "",
     "pass": true
   },
-  "pass": false
+  "pass": true
 }

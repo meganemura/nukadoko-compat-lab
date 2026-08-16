@@ -1,9 +1,9 @@
 {
   "targetId": "cucumber7-ts-starter--.",
   "targetName": "cucumber7-ts-starter",
-  "track": "main",
-  "generatedAt": "2026-08-16T01:07:14.813Z",
-  "commitSha": "450d068ae8b1e86d4d537a04dc91864a33aa7219",
+  "track": "npm",
+  "generatedAt": "2026-08-16T01:06:32.927Z",
+  "nukadokoVersion": "0.3.0",
   "featureFile": "features/simple-maths.feature",
   "expectedScenarioCount": 2,
   "run": {
@@ -27,7 +27,7 @@
         },
         {
           "code": "step-file-import-failed",
-          "message": "Cannot find package 'expect' imported from /Users/meganemura/src/github.com/meganemura/nukadoko-compat-lab/.nukadoko-work/cucumber7-ts-starter--./main/step-definitions/maths/simple-maths-steps.ts",
+          "message": "Cannot find package 'expect' imported from /Users/meganemura/src/github.com/meganemura/nukadoko-compat-lab/.nukadoko-work/cucumber7-ts-starter--./npm/step-definitions/maths/simple-maths-steps.ts",
           "file": "step-definitions/maths/simple-maths-steps.ts"
         }
       ],

@@ -60,13 +60,14 @@ node harness/render-readme.mjs
 `targets.json`'s `expectedScenarioCount` — exit 0 alone doesn't rule out a
 run that silently discovered zero scenarios (false-green).
 
-**Known gap, not yet resolved by this slice**: `esm-node`'s step
-definitions are a plain `.js` file; nukadoko's step-file discovery only
-walks `.ts` files under `featuresDir` (`walkTsFiles` in
-`discover-steps.ts`), so as of this table this target currently reports 0
-scenarios discovered / `check` errors on both tracks. This is a real,
-non-cosmetic finding, not a harness bug — see the task report for detail
-and the open question it raises about target selection or discovery scope.
+**Resolved as of nukadoko 0.3.0**: `esm-node`'s step definitions are a
+plain `.js` file. Through nukadoko 0.0.5, step-file discovery only walked
+`.ts` files under `featuresDir` (`walkTsFiles` in `discover-steps.ts`), so
+this target reported 0 scenarios discovered / `check` errors on both
+tracks. By 0.3.0, discovery (renamed `walkStepFiles`) also walks
+`.mts`/`.js`/`.mjs`, and this target now passes cleanly on both tracks
+(`run` 0 exit / 1 scenario, `check` 0, `tend` 0) — see the Results table
+below.
 
 **Known gap #2**: `cucumber7-ts-starter` spreads its glue across sibling
 top-level directories (`features/`, `step-definitions/`, `hooks/`,
@@ -80,13 +81,25 @@ ESM-only loader, and `nuka run` has no tolerant mode, so the whole
 discovery aborts: 0/2 scenarios, every track. (`nuka check` *does* have a
 tolerant mode and correctly names the file via `step-file-import-failed`
 — the diagnosis is honest, it's `run` that can't recover from it.)
-On top of that, `walkTsFiles` doesn't exclude `node_modules`: on the npm
-track specifically, where `node_modules/nukadoko` is a real directory
-(not the main track's symlink), `check`/`tend` don't even get as far as
-the `require()` error — they hang on an unsettled top-level await inside
-`node_modules/nukadoko/dist/cli.js` and exit 13. Both are nukadoko-side
-step-discovery gaps, not something this harness works around by editing
-the corpus.
+**Update as of nukadoko 0.3.0**: the `node_modules` half of this is fixed.
+`walkStepFiles` (the renamed `walkTsFiles`) now skips `node_modules` and
+any dot-directory at every depth, so on the npm track `check`/`tend` no
+longer walk into `node_modules/nukadoko` and hang — the unsettled
+top-level await / exit 13 is gone. Both now complete cleanly: `check`
+exits 1 and reports two `step-file-import-failed` entries (the known
+`env/set-environment-variables.ts` `require()`, plus a second one,
+`step-definitions/maths/simple-maths-steps.ts` failing to resolve the
+`expect` package — a harness working-copy artifact, not a nukadoko gap:
+the minimal `package.json` `run-target.mjs` writes deliberately skips the
+corpus's own devDependencies, so `expect@26.6.2` is simply absent; this
+was previously never reached because discovery hung before getting that
+far); `tend` exits 0 with an `import-failures-unseen` note
+naming both files. `run` is unaffected by this fix — `env/` sorts before
+`node_modules` alphabetically, so its walk already hit the `require()`
+error before `node_modules` would ever have come up, exclusion or not —
+and it still aborts at the `require()` above with 0/2 scenarios, same as
+before. Both were nukadoko-side step-discovery gaps, not something this
+harness works around by editing the corpus.
 
 ## Results
 
@@ -94,13 +107,16 @@ the corpus.
 
 | target | track | version / commit | run (exit, scenarios) | check (exit) | tend (exit) | overall |
 |---|---|---|---|---|---|---|
+| cucumber-js-examples--esm-node | npm | 0.3.0 | 0 (1/1) | 0 | 0 | PASS |
 | cucumber-js-examples--esm-node | npm | 0.0.5 | 1 (1/1) | 1 | 0 | FAIL |
 | cucumber-js-examples--esm-node | npm | 0.0.4 | 1 (1/1) | 1 | 0 | FAIL |
-| cucumber-js-examples--esm-node | main | 6810655a6740 | 1 (1/1) | 1 | 0 | FAIL |
+| cucumber-js-examples--esm-node | main | 450d068ae8b1 | 0 (1/1) | 0 | 0 | PASS |
+| cucumber-js-examples--typescript-node-esm | npm | 0.3.0 | 0 (1/1) | 0 | 0 | PASS |
 | cucumber-js-examples--typescript-node-esm | npm | 0.0.5 | 0 (1/1) | 0 | 0 | PASS |
 | cucumber-js-examples--typescript-node-esm | npm | 0.0.4 | 0 (1/1) | 0 | 0 | PASS |
-| cucumber-js-examples--typescript-node-esm | main | 6810655a6740 | 0 (1/1) | 0 | 0 | PASS |
+| cucumber-js-examples--typescript-node-esm | main | 450d068ae8b1 | 0 (1/1) | 0 | 0 | PASS |
+| cucumber7-ts-starter--. | npm | 0.3.0 | 1 (0/2) | 1 | 0 | FAIL |
 | cucumber7-ts-starter--. | npm | 0.0.5 | 1 (0/2) | 13 | 13 | FAIL |
-| cucumber7-ts-starter--. | main | 6810655a6740 | 1 (0/2) | 1 | 0 | FAIL |
+| cucumber7-ts-starter--. | main | 450d068ae8b1 | 1 (0/2) | 1 | 0 | FAIL |
 
 <!-- RESULTS:END -->
