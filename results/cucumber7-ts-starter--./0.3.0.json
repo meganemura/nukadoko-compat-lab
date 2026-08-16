@@ -27,7 +27,7 @@
         },
         {
           "code": "step-file-import-failed",
-          "message": "Cannot find package 'expect' imported from /Users/meganemura/src/github.com/meganemura/nukadoko-compat-lab/.nukadoko-work/cucumber7-ts-starter--./npm/step-definitions/maths/simple-maths-steps.ts",
+          "message": "Cannot find package 'expect' imported from <repo>/.nukadoko-work/cucumber7-ts-starter--./npm/step-definitions/maths/simple-maths-steps.ts",
           "file": "step-definitions/maths/simple-maths-steps.ts"
         }
       ],

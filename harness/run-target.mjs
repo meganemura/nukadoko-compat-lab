@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-// Responsibility: drive one target through nukadoko directly (.claude-team/
-// mvp-esm-node/spec.md "差込機構は「直接駆動」" — corpus's own `npm test`/
-// `cucumber-js` bin is never invoked; this script always calls `nuka` on the
-// corpus's features itself). One invocation = one target, one track:
+// Responsibility: drive one target through nukadoko directly — the corpus's
+// own `npm test`/`cucumber-js` bin is never invoked; this script always
+// calls `nuka` on the corpus's features itself, since nukadoko ships no
+// `cucumber-js`-named binary for a corpus's own scripts to find. One
+// invocation = one target, one track:
 //
 //   node harness/run-target.mjs <target-name> --track=npm|main
 //

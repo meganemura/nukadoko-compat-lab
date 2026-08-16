@@ -5,10 +5,13 @@ Runs real, unmodified cucumber-js corpora through
 (`nukadoko/compat`) to measure whether they actually pass, rather than
 auditing their glue as text. Three targets so far: `esm-node` and
 `typescript-node-esm` (from `cucumber/cucumber-js-examples`), and
-`cucumber7-ts-starter` (from `hdorgeval/cucumber7-ts-starter`). See
-`.claude-team/mvp-esm-node/spec.md` for the task this repo's original
-shape came from. `cloudevents/sdk-javascript` was investigated and
-abandoned — see `.claude-team/mvp-cloudevents/outcome.md` for why.
+`cucumber7-ts-starter` (from `hdorgeval/cucumber7-ts-starter`).
+`cloudevents/sdk-javascript` was also investigated as a fourth target,
+across several rounds of harness fixes, but was abandoned after hitting
+an unresolvable Node.js ESM/CJS interop limit: a `.cjs`-style file this
+corpus generates at build time reassigns `module.exports` after its
+initial declaration, a pattern Node can't statically resolve to a named
+`default` export when the working copy is loaded as ESM.
 
 ## Layout
 

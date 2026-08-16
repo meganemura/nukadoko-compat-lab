@@ -19,14 +19,14 @@
     "command": "nuka check --json",
     "exitCode": 13,
     "json": null,
-    "stderr": "Warning: Detected unsettled top-level await at file:///Users/meganemura/src/github.com/meganemura/nukadoko-compat-lab/.nukadoko-work/cucumber7-ts-starter--./npm/node_modules/nukadoko/dist/cli.js:6\nconst exitCode = await runCli(process.argv.slice(2));\n                 ^\n\n\n\n",
+    "stderr": "Warning: Detected unsettled top-level await at file://<repo>/.nukadoko-work/cucumber7-ts-starter--./npm/node_modules/nukadoko/dist/cli.js:6\nconst exitCode = await runCli(process.argv.slice(2));\n                 ^\n\n\n\n",
     "pass": false
   },
   "tend": {
     "command": "nuka tend --json",
     "exitCode": 13,
     "json": null,
-    "stderr": "Warning: Detected unsettled top-level await at file:///Users/meganemura/src/github.com/meganemura/nukadoko-compat-lab/.nukadoko-work/cucumber7-ts-starter--./npm/node_modules/nukadoko/dist/cli.js:6\nconst exitCode = await runCli(process.argv.slice(2));\n                 ^\n\n\n\n",
+    "stderr": "Warning: Detected unsettled top-level await at file://<repo>/.nukadoko-work/cucumber7-ts-starter--./npm/node_modules/nukadoko/dist/cli.js:6\nconst exitCode = await runCli(process.argv.slice(2));\n                 ^\n\n\n\n",
     "pass": false
   },
   "pass": false
