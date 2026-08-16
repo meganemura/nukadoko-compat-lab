@@ -63,14 +63,16 @@ node harness/render-readme.mjs
 `targets.json`'s `expectedScenarioCount` — exit 0 alone doesn't rule out a
 run that silently discovered zero scenarios (false-green).
 
-**Resolved as of nukadoko 0.3.0**: `esm-node`'s step definitions are a
+**Resolved in nukadoko 0.1.0**: `esm-node`'s step definitions are a
 plain `.js` file. Through nukadoko 0.0.5, step-file discovery only walked
 `.ts` files under `featuresDir` (`walkTsFiles` in `discover-steps.ts`), so
 this target reported 0 scenarios discovered / `check` errors on both
-tracks. By 0.3.0, discovery (renamed `walkStepFiles`) also walks
-`.mts`/`.js`/`.mjs`, and this target now passes cleanly on both tracks
-(`run` 0 exit / 1 scenario, `check` 0, `tend` 0) — see the Results table
-below.
+tracks. nukadoko's own CHANGELOG dates the widening to
+`.ts`/`.mts`/`.js`/`.mjs` (`walkStepFiles`, renamed from `walkTsFiles`) to
+0.1.0 (2026-08-06); this lab's own runs skip 0.1.0 and 0.2.0, so 0.3.0 is
+only the first version it happened to re-test against, not when the fix
+shipped. This target has passed cleanly on both tracks since (`run` 0
+exit / 1 scenario, `check` 0, `tend` 0) — see the Results table below.
 
 **Known gap #2**: `cucumber7-ts-starter` spreads its glue across sibling
 top-level directories (`features/`, `step-definitions/`, `hooks/`,
