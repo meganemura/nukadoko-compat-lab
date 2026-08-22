@@ -1,0 +1,1936 @@
+{
+  "targetId": "playwright--examples-todomvc",
+  "targetName": "todomvc",
+  "door": "playwright",
+  "track": "main",
+  "generatedAt": "2026-08-22T13:41:52.387Z",
+  "commitSha": "0e387be8caec66666d977c7e93b0f7f0a9a3ec36",
+  "featuresDir": "features",
+  "expectedScenarioCount": 23,
+  "expectedPlaywrightTests": 24,
+  "playwrightBaseline": {
+    "command": "npx playwright test --project=chromium --reporter=json",
+    "exitCode": 0,
+    "stats": {
+      "startTime": "2026-08-22T13:41:09.284Z",
+      "duration": 13946.757,
+      "expected": 24,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "testCount": 24,
+    "stdoutTail": "   \"title\": \"Todo Creation\",\n          \"file\": \"todo-creation/prevent-empty-todo.spec.ts\",\n          \"line\": 6,\n          \"column\": 6,\n          \"specs\": [\n            {\n              \"title\": \"Prevent adding empty todo\",\n              \"ok\": true,\n              \"tags\": [],\n              \"tests\": [\n                {\n                  \"timeout\": 15000,\n                  \"annotations\": [],\n                  \"expectedStatus\": \"passed\",\n                  \"projectId\": \"chromium\",\n                  \"projectName\": \"chromium\",\n                  \"results\": [\n                    {\n                      \"workerIndex\": 1,\n                      \"parallelIndex\": 1,\n                      \"status\": \"passed\",\n                      \"duration\": 1290,\n                      \"errors\": [],\n                      \"stdout\": [],\n                      \"stderr\": [],\n                      \"retry\": 0,\n                      \"startTime\": \"2026-08-22T13:41:21.338Z\",\n                      \"annotations\": [],\n                      \"attachments\": [\n                        {\n                          \"name\": \"video\",\n                          \"contentType\": \"video/webm\",\n                          \"path\": \"/Users/meganemura/src/github.com/meganemura/nukadoko-lab/.nukadoko-work/playwright--examples-todomvc/main/test-results/todo-creation-prevent-empt-6fab2-n-Prevent-adding-empty-todo-chromium/video.webm\"\n                        }\n                      ]\n                    }\n                  ],\n                  \"status\": \"expected\"\n                }\n              ],\n              \"id\": \"3352a289fbf0a2a64bb5-df78b2965ea5268bdc27\",\n              \"file\": \"todo-creation/prevent-empty-todo.spec.ts\",\n              \"line\": 7,\n              \"column\": 7\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"title\": \"todo-creation/prevent-whitespace-todo.spec.ts\",\n      \"file\": \"todo-creation/prevent-whitespace-todo.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [],\n      \"suites\": [\n        {\n          \"title\": \"Todo Creation\",\n          \"file\": \"todo-creation/prevent-whitespace-todo.spec.ts\",\n          \"line\": 6,\n          \"column\": 6,\n          \"specs\": [\n            {\n              \"title\": \"Prevent adding whitespace-only todo\",\n              \"ok\": true,\n              \"tags\": [],\n              \"tests\": [\n                {\n                  \"timeout\": 15000,\n                  \"annotations\": [],\n                  \"expectedStatus\": \"passed\",\n                  \"projectId\": \"chromium\",\n                  \"projectName\": \"chromium\",\n                  \"results\": [\n                    {\n                      \"workerIndex\": 0,\n                      \"parallelIndex\": 0,\n                      \"status\": \"passed\",\n                      \"duration\": 1245,\n                      \"errors\": [],\n                      \"stdout\": [],\n                      \"stderr\": [],\n                      \"retry\": 0,\n                      \"startTime\": \"2026-08-22T13:41:21.373Z\",\n                      \"annotations\": [],\n                      \"attachments\": [\n                        {\n                          \"name\": \"video\",\n                          \"contentType\": \"video/webm\",\n                          \"path\": \"/Users/meganemura/src/github.com/meganemura/nukadoko-lab/.nukadoko-work/playwright--examples-todomvc/main/test-results/todo-creation-prevent-whit-56062-adding-whitespace-only-todo-chromium/video.webm\"\n                        }\n                      ]\n                    }\n                  ],\n                  \"status\": \"expected\"\n                }\n              ],\n              \"id\": \"3321964ebe85934ff633-38717e0956962ead7b60\",\n              \"file\": \"todo-creation/prevent-whitespace-todo.spec.ts\",\n              \"line\": 7,\n              \"column\": 7\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"errors\": [],\n  \"stats\": {\n    \"startTime\": \"2026-08-22T13:41:09.284Z\",\n    \"duration\": 13946.757,\n    \"expected\": 24,\n    \"skipped\": 0,\n    \"unexpected\": 0,\n    \"flaky\": 0\n  }\n}\n",
+    "stderrTail": ""
+  },
+  "playwrightAfterOverlay": {
+    "command": "npx playwright test --project=chromium --reporter=json",
+    "exitCode": 0,
+    "stats": {
+      "startTime": "2026-08-22T13:41:25.158Z",
+      "duration": 13584.321,
+      "expected": 24,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "testCount": 24,
+    "stdoutTail": "title\": \"Todo Creation\",\n          \"file\": \"todo-creation/prevent-empty-todo.spec.ts\",\n          \"line\": 15,\n          \"column\": 6,\n          \"specs\": [\n            {\n              \"title\": \"Prevent adding empty todo\",\n              \"ok\": true,\n              \"tags\": [],\n              \"tests\": [\n                {\n                  \"timeout\": 15000,\n                  \"annotations\": [],\n                  \"expectedStatus\": \"passed\",\n                  \"projectId\": \"chromium\",\n                  \"projectName\": \"chromium\",\n                  \"results\": [\n                    {\n                      \"workerIndex\": 2,\n                      \"parallelIndex\": 2,\n                      \"status\": \"passed\",\n                      \"duration\": 1257,\n                      \"errors\": [],\n                      \"stdout\": [],\n                      \"stderr\": [],\n                      \"retry\": 0,\n                      \"startTime\": \"2026-08-22T13:41:36.710Z\",\n                      \"annotations\": [],\n                      \"attachments\": [\n                        {\n                          \"name\": \"video\",\n                          \"contentType\": \"video/webm\",\n                          \"path\": \"/Users/meganemura/src/github.com/meganemura/nukadoko-lab/.nukadoko-work/playwright--examples-todomvc/main/test-results/todo-creation-prevent-empt-6fab2-n-Prevent-adding-empty-todo-chromium/video.webm\"\n                        }\n                      ]\n                    }\n                  ],\n                  \"status\": \"expected\"\n                }\n              ],\n              \"id\": \"3352a289fbf0a2a64bb5-df78b2965ea5268bdc27\",\n              \"file\": \"todo-creation/prevent-empty-todo.spec.ts\",\n              \"line\": 16,\n              \"column\": 3\n            }\n          ]\n        }\n      ]\n    },\n    {\n      \"title\": \"todo-creation/prevent-whitespace-todo.spec.ts\",\n      \"file\": \"todo-creation/prevent-whitespace-todo.spec.ts\",\n      \"column\": 0,\n      \"line\": 0,\n      \"specs\": [],\n      \"suites\": [\n        {\n          \"title\": \"Todo Creation\",\n          \"file\": \"todo-creation/prevent-whitespace-todo.spec.ts\",\n          \"line\": 10,\n          \"column\": 6,\n          \"specs\": [\n            {\n              \"title\": \"Prevent adding whitespace-only todo\",\n              \"ok\": true,\n              \"tags\": [],\n              \"tests\": [\n                {\n                  \"timeout\": 15000,\n                  \"annotations\": [],\n                  \"expectedStatus\": \"passed\",\n                  \"projectId\": \"chromium\",\n                  \"projectName\": \"chromium\",\n                  \"results\": [\n                    {\n                      \"workerIndex\": 4,\n                      \"parallelIndex\": 4,\n                      \"status\": \"passed\",\n                      \"duration\": 1215,\n                      \"errors\": [],\n                      \"stdout\": [],\n                      \"stderr\": [],\n                      \"retry\": 0,\n                      \"startTime\": \"2026-08-22T13:41:37.059Z\",\n                      \"annotations\": [],\n                      \"attachments\": [\n                        {\n                          \"name\": \"video\",\n                          \"contentType\": \"video/webm\",\n                          \"path\": \"/Users/meganemura/src/github.com/meganemura/nukadoko-lab/.nukadoko-work/playwright--examples-todomvc/main/test-results/todo-creation-prevent-whit-56062-adding-whitespace-only-todo-chromium/video.webm\"\n                        }\n                      ]\n                    }\n                  ],\n                  \"status\": \"expected\"\n                }\n              ],\n              \"id\": \"3321964ebe85934ff633-38717e0956962ead7b60\",\n              \"file\": \"todo-creation/prevent-whitespace-todo.spec.ts\",\n              \"line\": 11,\n              \"column\": 3\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"errors\": [],\n  \"stats\": {\n    \"startTime\": \"2026-08-22T13:41:25.158Z\",\n    \"duration\": 13584.321,\n    \"expected\": 24,\n    \"skipped\": 0,\n    \"unexpected\": 0,\n    \"flaky\": 0\n  }\n}\n",
+    "stderrTail": "",
+    "pass": true
+  },
+  "arrows": {
+    "ok": true,
+    "violations": []
+  },
+  "run": {
+    "command": "nuka run features",
+    "note": "no --json (run has none, see this file's own header); stdout is one JSON scenario record per line, parsed below",
+    "exitCode": 0,
+    "scenarioCount": 23,
+    "scenarios": [
+      {
+        "scenario_record_id": "scn-20260822-224139-ahhf",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/adding-todos.feature",
+        "scenario": "should add single todo",
+        "line": 14,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:39.958Z",
+        "finished_at": "2026-08-22T13:41:40.355Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224139-6ek5"
+          },
+          {
+            "text": "the new-todo field is visible",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-tujv"
+          },
+          {
+            "text": "\"Buy groceries\" is typed into the new-todo field",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-im50"
+          },
+          {
+            "text": "the new-todo field holds \"Buy groceries\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-mga1"
+          },
+          {
+            "text": "Enter is pressed in the new-todo field",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-lt7a"
+          },
+          {
+            "text": "the todo list shows \"Buy groceries\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-u12y"
+          },
+          {
+            "text": "the new-todo field holds \"\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-gfxs"
+          },
+          {
+            "text": "the counter reads \"1 item left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-bs73"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224139-ahhf",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:40.373Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224140-57cn",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/adding-todos.feature",
+        "scenario": "should add multiple todos",
+        "line": 23,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:40.389Z",
+        "finished_at": "2026-08-22T13:41:40.963Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-syds"
+          },
+          {
+            "text": "the todo \"Buy milk\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-l8sm"
+          },
+          {
+            "text": "the todo list shows \"Buy milk\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-iq6r"
+          },
+          {
+            "text": "the counter reads \"1 item left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-c8t4"
+          },
+          {
+            "text": "the todo \"Walk the dog\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-yjl4"
+          },
+          {
+            "text": "the todo list shows \"Buy milk\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-q481"
+          },
+          {
+            "text": "the todo list shows \"Walk the dog\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-fqe9"
+          },
+          {
+            "text": "the counter reads \"2 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-la7g"
+          },
+          {
+            "text": "the todo \"Finish report\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-ngzn"
+          },
+          {
+            "text": "the todo list shows \"Buy milk\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-vk09"
+          },
+          {
+            "text": "the todo list shows \"Walk the dog\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-0bpe"
+          },
+          {
+            "text": "the todo list shows \"Finish report\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-gkht"
+          },
+          {
+            "text": "the counter reads \"3 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224140-25pj"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224140-57cn",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:41.004Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224141-bnt4",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/adding-todos.feature",
+        "scenario": "should not add empty todo",
+        "line": 37,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:41.018Z",
+        "finished_at": "2026-08-22T13:41:41.374Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224141-817j"
+          },
+          {
+            "text": "the new-todo field is clicked",
+            "status": "passed",
+            "step_record_id": "step-20260822-224141-849z"
+          },
+          {
+            "text": "the new-todo field is focused",
+            "status": "passed",
+            "step_record_id": "step-20260822-224141-060o"
+          },
+          {
+            "text": "Enter is pressed in the new-todo field",
+            "status": "passed",
+            "step_record_id": "step-20260822-224141-3urm"
+          },
+          {
+            "text": "the todo list is empty",
+            "status": "passed",
+            "step_record_id": "step-20260822-224141-kf9j"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224141-bnt4",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:41.388Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224141-gq6y",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/adding-todos.feature",
+        "scenario": "should trim whitespace from new todo",
+        "line": 43,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:41.402Z",
+        "finished_at": "2026-08-22T13:41:41.726Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224141-fzqi"
+          },
+          {
+            "text": "the todo \"   Todo with spaces   \" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224141-btf0"
+          },
+          {
+            "text": "the todo list shows \"Todo with spaces\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224141-4fxu"
+          },
+          {
+            "text": "the counter reads \"1 item left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224141-51ur"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224141-gq6y",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:41.753Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224141-dkqg",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/completing-todos.feature",
+        "scenario": "should complete single todo",
+        "line": 16,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:41.766Z",
+        "finished_at": "2026-08-22T13:41:42.132Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224141-oka1"
+          },
+          {
+            "text": "the todo \"Buy groceries\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-66kw"
+          },
+          {
+            "text": "the todo list shows \"Buy groceries\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-3c6z"
+          },
+          {
+            "text": "the counter reads \"1 item left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-hvu3"
+          },
+          {
+            "text": "the todo \"Buy groceries\" is completed",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-h3cd"
+          },
+          {
+            "text": "the todo \"Buy groceries\" is marked complete",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-6iyw"
+          },
+          {
+            "text": "the counter reads \"0 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-z1fj"
+          },
+          {
+            "text": "the Clear completed button is offered",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-0jzo"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224141-dkqg",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:42.154Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224142-wxco",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/completing-todos.feature",
+        "scenario": "should complete multiple todos",
+        "line": 25,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:42.168Z",
+        "finished_at": "2026-08-22T13:41:42.647Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-gu26"
+          },
+          {
+            "text": "the todo \"Buy milk\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-mcjz"
+          },
+          {
+            "text": "the todo \"Walk dog\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-vm0p"
+          },
+          {
+            "text": "the todo \"Finish report\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-koby"
+          },
+          {
+            "text": "the todo list shows \"Buy milk\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-u3g7"
+          },
+          {
+            "text": "the todo list shows \"Walk dog\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-se1j"
+          },
+          {
+            "text": "the todo list shows \"Finish report\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-y8hb"
+          },
+          {
+            "text": "the counter reads \"3 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-f8lt"
+          },
+          {
+            "text": "the todo \"Buy milk\" is completed",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-70g7"
+          },
+          {
+            "text": "the todo \"Buy milk\" is marked complete",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-c81h"
+          },
+          {
+            "text": "the counter reads \"2 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-qnnu"
+          },
+          {
+            "text": "the todo \"Finish report\" is completed",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-uj7c"
+          },
+          {
+            "text": "the todo \"Finish report\" is marked complete",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-69zm"
+          },
+          {
+            "text": "the counter reads \"1 item left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-g7vm"
+          },
+          {
+            "text": "the Clear completed button is offered",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-n1sp"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224142-wxco",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:42.671Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224142-ze5u",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/completing-todos.feature",
+        "scenario": "should toggle all todos complete",
+        "line": 41,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:42.687Z",
+        "finished_at": "2026-08-22T13:41:43.077Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-b9sy"
+          },
+          {
+            "text": "the todo \"Task 1\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-9vsr"
+          },
+          {
+            "text": "the todo \"Task 2\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224142-f827"
+          },
+          {
+            "text": "the todo \"Task 3\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-w08g"
+          },
+          {
+            "text": "the todo list shows \"Task 1\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-3a8h"
+          },
+          {
+            "text": "the todo list shows \"Task 2\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-av2e"
+          },
+          {
+            "text": "the todo list shows \"Task 3\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-wyme"
+          },
+          {
+            "text": "the counter reads \"3 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-hpde"
+          },
+          {
+            "text": "the Mark all as complete checkbox is clicked",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-5ewh"
+          },
+          {
+            "text": "the counter reads \"0 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-aupl"
+          },
+          {
+            "text": "the Clear completed button is offered",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-13pk"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224142-ze5u",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:43.087Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224143-v0a9",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/completing-todos.feature",
+        "scenario": "should toggle all todos incomplete",
+        "line": 53,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:43.101Z",
+        "finished_at": "2026-08-22T13:41:43.534Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-j56l"
+          },
+          {
+            "text": "the todo \"First todo\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-it4l"
+          },
+          {
+            "text": "the todo \"Second todo\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-ndze"
+          },
+          {
+            "text": "the todo \"Third todo\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-qzzv"
+          },
+          {
+            "text": "the Mark all as complete checkbox is clicked",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-c4oe"
+          },
+          {
+            "text": "the counter reads \"0 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-8jpe"
+          },
+          {
+            "text": "the Mark all as complete checkbox is clicked",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-yp97"
+          },
+          {
+            "text": "the counter reads \"3 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-qfys"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224143-v0a9",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:43.554Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224143-wrcc",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/completing-todos.feature",
+        "scenario": "should uncomplete completed todo",
+        "line": 62,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:43.569Z",
+        "finished_at": "2026-08-22T13:41:43.938Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-87xe"
+          },
+          {
+            "text": "the todo \"Buy groceries\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-mqk0"
+          },
+          {
+            "text": "the todo \"Buy groceries\" is completed",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-whe8"
+          },
+          {
+            "text": "the todo \"Buy groceries\" is reopened",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-79sg"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224143-wrcc",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:43.954Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224143-r96b",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/deleting-todos.feature",
+        "scenario": "should clear all completed todos",
+        "line": 15,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:43.967Z",
+        "finished_at": "2026-08-22T13:41:44.615Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224143-zrxe"
+          },
+          {
+            "text": "the todo \"Task 1\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224144-expd"
+          },
+          {
+            "text": "the todo \"Task 2\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224144-wg1r"
+          },
+          {
+            "text": "the todo \"Task 3\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224144-nlcc"
+          },
+          {
+            "text": "the todo list reads",
+            "status": "passed",
+            "step_record_id": "step-20260822-224144-u7t2"
+          },
+          {
+            "text": "the todo \"Task 1\" is completed",
+            "status": "passed",
+            "step_record_id": "step-20260822-224144-i1in"
+          },
+          {
+            "text": "the todo \"Task 3\" is completed",
+            "status": "passed",
+            "step_record_id": "step-20260822-224144-6ywt"
+          },
+          {
+            "text": "the counter reads \"1 item left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224144-m66u"
+          },
+          {
+            "text": "the Clear completed button is offered",
+            "status": "passed",
+            "step_record_id": "step-20260822-224144-87el"
+          },
+          {
+            "text": "the Clear completed button is clicked",
+            "status": "passed",
+            "step_record_id": "step-20260822-224144-bvqr"
+          },
+          {
+            "text": "the todo list shows \"Task 2\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224144-b6am"
+          },
+          {
+            "text": "the counter reads \"1 item left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224144-rkay"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224143-r96b",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:44.637Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224144-83tg",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/deleting-todos.feature",
+        "scenario": "should delete single todo",
+        "line": 33,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:44.651Z",
+        "finished_at": "2026-08-22T13:41:45.264Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224144-5b62"
+          },
+          {
+            "text": "the todo \"Task to delete\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-2mjx"
+          },
+          {
+            "text": "the todo list shows \"Task to delete\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-5m04"
+          },
+          {
+            "text": "the counter reads \"1 item left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-fdc9"
+          },
+          {
+            "text": "the todo \"Task to delete\" is hovered",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-x6q7"
+          },
+          {
+            "text": "the todo \"Task to delete\" offers a Delete button",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-zdix"
+          },
+          {
+            "text": "the todo \"Task to delete\" is deleted",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-c146"
+          },
+          {
+            "text": "the todo list does not show \"Task to delete\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-czdp"
+          },
+          {
+            "text": "the todo list is empty",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-yz1a"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224144-83tg",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:45.286Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224145-19ld",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/deleting-todos.feature",
+        "scenario": "should delete specific todo from multiple",
+        "line": 43,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:45.301Z",
+        "finished_at": "2026-08-22T13:41:45.736Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-esxw"
+          },
+          {
+            "text": "the todo \"Task 1\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-jogc"
+          },
+          {
+            "text": "the todo \"Task 2\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-xcrx"
+          },
+          {
+            "text": "the todo \"Task 3\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-ruvb"
+          },
+          {
+            "text": "the todo list shows \"Task 1\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-loeg"
+          },
+          {
+            "text": "the todo list shows \"Task 2\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-osw4"
+          },
+          {
+            "text": "the todo list shows \"Task 3\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-qasm"
+          },
+          {
+            "text": "the counter reads \"3 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-waki"
+          },
+          {
+            "text": "the todo \"Task 2\" is deleted",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-qn6z"
+          },
+          {
+            "text": "the todo list shows \"Task 1\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-h9bz"
+          },
+          {
+            "text": "the todo list shows \"Task 3\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-f59w"
+          },
+          {
+            "text": "the counter reads \"2 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-dabw"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224145-19ld",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:45.755Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224145-ww88",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/editing-todos.feature",
+        "scenario": "should edit todo by double-clicking",
+        "line": 9,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:45.769Z",
+        "finished_at": "2026-08-22T13:41:46.123Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224145-9zl4"
+          },
+          {
+            "text": "the todo \"Buy milk\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-76jx"
+          },
+          {
+            "text": "the todo list shows \"Buy milk\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-frfj"
+          },
+          {
+            "text": "the todo \"Buy milk\" is opened for editing",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-psk0"
+          },
+          {
+            "text": "the edit box is visible",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-xp7z"
+          },
+          {
+            "text": "the edit box holds \"Buy milk\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-43qa"
+          },
+          {
+            "text": "\"Buy organic milk\" is typed into the edit box",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-ntbp"
+          },
+          {
+            "text": "Enter is pressed in the edit box",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-9vxc"
+          },
+          {
+            "text": "the todo list shows \"Buy organic milk\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-rx7u"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224145-ww88",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:46.138Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224146-6obo",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/editing-todos.feature",
+        "scenario": "should cancel edit on escape",
+        "line": 19,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:46.152Z",
+        "finished_at": "2026-08-22T13:41:46.558Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-h0n4"
+          },
+          {
+            "text": "the todo \"Original text\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-glxf"
+          },
+          {
+            "text": "the todo list shows \"Original text\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-6k8l"
+          },
+          {
+            "text": "the todo \"Original text\" is opened for editing",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-2f2y"
+          },
+          {
+            "text": "the edit box holds \"Original text\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-sc1r"
+          },
+          {
+            "text": "\"Modified text\" is typed into the edit box",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-yrte"
+          },
+          {
+            "text": "Escape is pressed in the edit box",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-7ucq"
+          },
+          {
+            "text": "the todo list shows \"Original text\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-9608"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224146-6obo",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:46.586Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224146-8tem",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/editing-todos.feature",
+        "scenario": "should delete todo when edited to empty",
+        "line": 28,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:46.600Z",
+        "finished_at": "2026-08-22T13:41:47.011Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-strf"
+          },
+          {
+            "text": "the todo \"Temporary task\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-jwa8"
+          },
+          {
+            "text": "the todo list shows \"Temporary task\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-9vc0"
+          },
+          {
+            "text": "the counter reads \"1 item left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-w7tx"
+          },
+          {
+            "text": "the todo \"Temporary task\" is opened for editing",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-mqrf"
+          },
+          {
+            "text": "the edit box is visible",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-yu0e"
+          },
+          {
+            "text": "\"\" is typed into the edit box",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-13iy"
+          },
+          {
+            "text": "Enter is pressed in the edit box",
+            "status": "passed",
+            "step_record_id": "step-20260822-224146-642e"
+          },
+          {
+            "text": "the todo list does not show \"Temporary task\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-oct8"
+          },
+          {
+            "text": "the todo list is empty",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-joo7"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224146-8tem",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:47.053Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224147-4kgv",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/editing-todos.feature",
+        "scenario": "should save edit on blur",
+        "line": 39,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:47.067Z",
+        "finished_at": "2026-08-22T13:41:47.458Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-m3q8"
+          },
+          {
+            "text": "the todo \"Call dentist\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-s3su"
+          },
+          {
+            "text": "the todo \"Call dentist\" is opened for editing",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-b2u4"
+          },
+          {
+            "text": "\"Schedule dentist appointment\" is typed into the edit box",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-v1kg"
+          },
+          {
+            "text": "the page heading is clicked",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-54dh"
+          },
+          {
+            "text": "the todo list shows \"Schedule dentist appointment\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-07x5"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224147-4kgv",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:47.471Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224147-veol",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/editing-todos.feature",
+        "scenario": "should trim whitespace when editing",
+        "line": 46,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:47.487Z",
+        "finished_at": "2026-08-22T13:41:47.852Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-dmk5"
+          },
+          {
+            "text": "the todo \"Original task\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-zx9b"
+          },
+          {
+            "text": "the todo list shows \"Original task\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-yjcn"
+          },
+          {
+            "text": "the todo \"Original task\" is opened for editing",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-kwdc"
+          },
+          {
+            "text": "\"   Edited task   \" is typed into the edit box",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-4eli"
+          },
+          {
+            "text": "the edit box holds \"   Edited task   \"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-20y6"
+          },
+          {
+            "text": "Enter is pressed in the edit box",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-79vx"
+          },
+          {
+            "text": "the todo list shows \"Edited task\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-vbts"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224147-veol",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:47.871Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224147-c97r",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/filtering-todos.feature",
+        "scenario": "should filter active todos",
+        "line": 9,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:47.885Z",
+        "finished_at": "2026-08-22T13:41:48.340Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224147-7zua"
+          },
+          {
+            "text": "the todo \"Active 1\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-tpd9"
+          },
+          {
+            "text": "the todo \"Active 2\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-q5ss"
+          },
+          {
+            "text": "the todo \"Will complete\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-pc2g"
+          },
+          {
+            "text": "the todo list shows \"Active 1\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-lg80"
+          },
+          {
+            "text": "the todo list shows \"Active 2\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-9g3j"
+          },
+          {
+            "text": "the todo list shows \"Will complete\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-4kfg"
+          },
+          {
+            "text": "the todo \"Will complete\" is completed",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-27eu"
+          },
+          {
+            "text": "the todo \"Will complete\" is marked complete",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-0mgw"
+          },
+          {
+            "text": "the counter reads \"2 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-kby2"
+          },
+          {
+            "text": "the \"Active\" filter is selected",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-zb7c"
+          },
+          {
+            "text": "the URL ends with \"#/active\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-3mmw"
+          },
+          {
+            "text": "the todo list shows \"Active 1\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-2ndj"
+          },
+          {
+            "text": "the todo list shows \"Active 2\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-v0cl"
+          },
+          {
+            "text": "the todo list does not show \"Will complete\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-1urw"
+          },
+          {
+            "text": "the \"Active\" filter link is visible",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-vr87"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224147-c97r",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:48.356Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224148-ac8z",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/todo-creation.feature",
+        "scenario": "Add a single todo",
+        "line": 11,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:48.371Z",
+        "finished_at": "2026-08-22T13:41:48.705Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-njhb"
+          },
+          {
+            "text": "the new-todo field is visible",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-rgvf"
+          },
+          {
+            "text": "\"Buy groceries\" is typed into the new-todo field",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-c3z7"
+          },
+          {
+            "text": "the new-todo field holds \"Buy groceries\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-p74u"
+          },
+          {
+            "text": "Enter is pressed in the new-todo field",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-hneg"
+          },
+          {
+            "text": "the todo list shows \"Buy groceries\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-wj1m"
+          },
+          {
+            "text": "the new-todo field holds \"\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-s6s9"
+          },
+          {
+            "text": "the counter reads \"1 item left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-4smg"
+          },
+          {
+            "text": "the todo \"Buy groceries\" is not marked complete",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-gg82"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224148-ac8z",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:48.721Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224148-vle1",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/todo-creation.feature",
+        "scenario": "Add multiple todos",
+        "line": 21,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:48.736Z",
+        "finished_at": "2026-08-22T13:41:49.098Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224148-y9re"
+          },
+          {
+            "text": "the new-todo field is visible",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-z2zo"
+          },
+          {
+            "text": "the todo \"Buy groceries\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-sfgd"
+          },
+          {
+            "text": "the todo list shows \"Buy groceries\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-ge6p"
+          },
+          {
+            "text": "the todo \"Walk the dog\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-7ifl"
+          },
+          {
+            "text": "the todo list shows \"Walk the dog\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-q3jg"
+          },
+          {
+            "text": "the todo \"Read a book\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-pxsi"
+          },
+          {
+            "text": "the todo list shows \"Read a book\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-jads"
+          },
+          {
+            "text": "the todo list shows \"Buy groceries\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-41lt"
+          },
+          {
+            "text": "the todo list shows \"Walk the dog\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-s5rq"
+          },
+          {
+            "text": "the counter reads \"3 items left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-rwnu"
+          },
+          {
+            "text": "the todo \"Buy groceries\" is not marked complete",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-1ioq"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224148-vle1",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:49.137Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224149-yzl0",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/todo-creation.feature",
+        "scenario": "Add todo with special characters",
+        "line": 34,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:49.152Z",
+        "finished_at": "2026-08-22T13:41:49.466Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-6ijw"
+          },
+          {
+            "text": "the new-todo field is visible",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-uo7f"
+          },
+          {
+            "text": "the todo \"Buy @groceries & supplies (urgent!)\" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-wc07"
+          },
+          {
+            "text": "the todo list shows \"Buy @groceries & supplies (urgent!)\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-cdyt"
+          },
+          {
+            "text": "the counter reads \"1 item left\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-344o"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224149-yzl0",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:49.504Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224149-epev",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/todo-creation.feature",
+        "scenario": "Prevent adding empty todo",
+        "line": 40,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:49.518Z",
+        "finished_at": "2026-08-22T13:41:49.835Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-59ag"
+          },
+          {
+            "text": "the new-todo field is visible",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-jlqm"
+          },
+          {
+            "text": "the new-todo field is clicked",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-3sn8"
+          },
+          {
+            "text": "Enter is pressed in the new-todo field",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-m7na"
+          },
+          {
+            "text": "the todo list is empty",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-xgyi"
+          },
+          {
+            "text": "the new-todo field holds \"\"",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-cyk8"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224149-epev",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:49.855Z"
+            }
+          ]
+        }
+      },
+      {
+        "scenario_record_id": "scn-20260822-224149-hvqn",
+        "run_id": "run-20260822-224139-nrl4",
+        "feature": "features/todo-creation.feature",
+        "scenario": "Prevent adding whitespace-only todo",
+        "line": 47,
+        "status": "passed",
+        "environment": "default",
+        "browser": {
+          "type": "chromium",
+          "version": "149.0.7827.55"
+        },
+        "session": null,
+        "started_at": "2026-08-22T13:41:49.868Z",
+        "finished_at": "2026-08-22T13:41:50.153Z",
+        "steps": [
+          {
+            "text": "the TodoMVC app is open",
+            "status": "passed",
+            "step_record_id": "step-20260822-224149-rd58"
+          },
+          {
+            "text": "the new-todo field is visible",
+            "status": "passed",
+            "step_record_id": "step-20260822-224150-ur85"
+          },
+          {
+            "text": "the todo \"   \" is added",
+            "status": "passed",
+            "step_record_id": "step-20260822-224150-flt9"
+          },
+          {
+            "text": "the todo list is empty",
+            "status": "passed",
+            "step_record_id": "step-20260822-224150-3jbr"
+          }
+        ],
+        "hooks": [],
+        "git": {
+          "commit": "ace4105a8698943f3fa8fca4a987dc35deeae2f9",
+          "clean": false
+        },
+        "evidence": {
+          "dir": ".nukadoko/records/scenarios/scn-20260822-224149-hvqn",
+          "screenshots": [
+            {
+              "file": "final.png",
+              "at": "2026-08-22T13:41:50.171Z"
+            }
+          ]
+        }
+      }
+    ],
+    "stderr": "scenario 1/23  features/adding-todos.feature:14  should add single todo\n  step 1/8  ok  0.3s  the TodoMVC app is open\n  step 2/8  ok  0.0s  the new-todo field is visible\n  step 3/8  ok  0.0s  \"Buy groceries\" is typed into the new-todo field\n  step 4/8  ok  0.0s  the new-todo field holds \"Buy groceries\"\n  step 5/8  ok  0.0s  Enter is pressed in the new-todo field\n  step 6/8  ok  0.0s  the todo list shows \"Buy groceries\"\n  step 7/8  ok  0.0s  the new-todo field holds \"\"\n  step 8/8  ok  0.0s  the counter reads \"1 item left\"\nscenario 2/23  features/adding-todos.feature:23  should add multiple todos\n  step 1/13  ok  0.5s  the TodoMVC app is open\n  step 2/13  ok  0.0s  the todo \"Buy milk\" is added\n  step 3/13  ok  0.0s  the todo list shows \"Buy milk\"\n  step 4/13  ok  0.0s  the counter reads \"1 item left\"\n  step 5/13  ok  0.0s  the todo \"Walk the dog\" is added\n  step 6/13  ok  0.0s  the todo list shows \"Buy milk\"\n  step 7/13  ok  0.0s  the todo list shows \"Walk the dog\"\n  step 8/13  ok  0.0s  the counter reads \"2 items left\"\n  step 9/13  ok  0.0s  the todo \"Finish report\" is added\n  step 10/13  ok  0.0s  the todo list shows \"Buy milk\"\n  step 11/13  ok  0.0s  the todo list shows \"Walk the dog\"\n  step 12/13  ok  0.0s  the todo list shows \"Finish report\"\n  step 13/13  ok  0.0s  the counter reads \"3 items left\"\nscenario 3/23  features/adding-todos.feature:37  should not add empty todo\n  step 1/5  ok  0.3s  the TodoMVC app is open\n  step 2/5  ok  0.0s  the new-todo field is clicked\n  step 3/5  ok  0.0s  the new-todo field is focused\n  step 4/5  ok  0.0s  Enter is pressed in the new-todo field\n  step 5/5  ok  0.0s  the todo list is empty\nscenario 4/23  features/adding-todos.feature:43  should trim whitespace from new todo\n  step 1/4  ok  0.3s  the TodoMVC app is open\n  step 2/4  ok  0.0s  the todo \"   Todo with spaces   \" is added\n  step 3/4  ok  0.0s  the todo list shows \"Todo with spaces\"\n  step 4/4  ok  0.0s  the counter reads \"1 item left\"\nscenario 5/23  features/completing-todos.feature:16  should complete single todo\n  step 1/8  ok  0.3s  the TodoMVC app is open\n  step 2/8  ok  0.0s  the todo \"Buy groceries\" is added\n  step 3/8  ok  0.0s  the todo list shows \"Buy groceries\"\n  step 4/8  ok  0.0s  the counter reads \"1 item left\"\n  step 5/8  ok  0.0s  the todo \"Buy groceries\" is completed\n  step 6/8  ok  0.0s  the todo \"Buy groceries\" is marked complete\n  step 7/8  ok  0.0s  the counter reads \"0 items left\"\n  step 8/8  ok  0.0s  the Clear completed button is offered\nscenario 6/23  features/completing-todos.feature:25  should complete multiple todos\n  step 1/15  ok  0.3s  the TodoMVC app is open\n  step 2/15  ok  0.0s  the todo \"Buy milk\" is added\n  step 3/15  ok  0.0s  the todo \"Walk dog\" is added\n  step 4/15  ok  0.0s  the todo \"Finish report\" is added\n  step 5/15  ok  0.0s  the todo list shows \"Buy milk\"\n  step 6/15  ok  0.0s  the todo list shows \"Walk dog\"\n  step 7/15  ok  0.0s  the todo list shows \"Finish report\"\n  step 8/15  ok  0.0s  the counter reads \"3 items left\"\n  step 9/15  ok  0.0s  the todo \"Buy milk\" is completed\n  step 10/15  ok  0.0s  the todo \"Buy milk\" is marked complete\n  step 11/15  ok  0.0s  the counter reads \"2 items left\"\n  step 12/15  ok  0.0s  the todo \"Finish report\" is completed\n  step 13/15  ok  0.0s  the todo \"Finish report\" is marked complete\n  step 14/15  ok  0.0s  the counter reads \"1 item left\"\n  step 15/15  ok  0.0s  the Clear completed button is offered\nscenario 7/23  features/completing-todos.feature:41  should toggle all todos complete\n  step 1/11  ok  0.3s  the TodoMVC app is open\n  step 2/11  ok  0.0s  the todo \"Task 1\" is added\n  step 3/11  ok  0.0s  the todo \"Task 2\" is added\n  step 4/11  ok  0.0s  the todo \"Task 3\" is added\n  step 5/11  ok  0.0s  the todo list shows \"Task 1\"\n  step 6/11  ok  0.0s  the todo list shows \"Task 2\"\n  step 7/11  ok  0.0s  the todo list shows \"Task 3\"\n  step 8/11  ok  0.0s  the counter reads \"3 items left\"\n  step 9/11  ok  0.0s  the Mark all as complete checkbox is clicked\n  step 10/11  ok  0.0s  the counter reads \"0 items left\"\n  step 11/11  ok  0.0s  the Clear completed button is offered\nscenario 8/23  features/completing-todos.feature:53  should toggle all todos incomplete\n  step 1/8  ok  0.3s  the TodoMVC app is open\n  step 2/8  ok  0.0s  the todo \"First todo\" is added\n  step 3/8  ok  0.0s  the todo \"Second todo\" is added\n  step 4/8  ok  0.0s  the todo \"Third todo\" is added\n  step 5/8  ok  0.0s  the Mark all as complete checkbox is clicked\n  step 6/8  ok  0.0s  the counter reads \"0 items left\"\n  step 7/8  ok  0.0s  the Mark all as complete checkbox is clicked\n  step 8/8  ok  0.0s  the counter reads \"3 items left\"\nscenario 9/23  features/completing-todos.feature:62  should uncomplete completed todo\n  step 1/4  ok  0.3s  the TodoMVC app is open\n  step 2/4  ok  0.0s  the todo \"Buy groceries\" is added\n  step 3/4  ok  0.0s  the todo \"Buy groceries\" is completed\n  step 4/4  ok  0.0s  the todo \"Buy groceries\" is reopened\nscenario 10/23  features/deleting-todos.feature:15  should clear all completed todos\n  step 1/12  ok  0.4s  the TodoMVC app is open\n  step 2/12  ok  0.0s  the todo \"Task 1\" is added\n  step 3/12  ok  0.0s  the todo \"Task 2\" is added\n  step 4/12  ok  0.0s  the todo \"Task 3\" is added\n  step 5/12  ok  0.0s  the todo list reads\n  step 6/12  ok  0.0s  the todo \"Task 1\" is completed\n  step 7/12  ok  0.0s  the todo \"Task 3\" is completed\n  step 8/12  ok  0.0s  the counter reads \"1 item left\"\n  step 9/12  ok  0.0s  the Clear completed button is offered\n  step 10/12  ok  0.0s  the Clear completed button is clicked\n  step 11/12  ok  0.0s  the todo list shows \"Task 2\"\n  step 12/12  ok  0.0s  the counter reads \"1 item left\"\nscenario 11/23  features/deleting-todos.feature:33  should delete single todo\n  step 1/9  ok  0.4s  the TodoMVC app is open\n  step 2/9  ok  0.0s  the todo \"Task to delete\" is added\n  step 3/9  ok  0.0s  the todo list shows \"Task to delete\"\n  step 4/9  ok  0.0s  the counter reads \"1 item left\"\n  step 5/9  ok  0.0s  the todo \"Task to delete\" is hovered\n  step 6/9  ok  0.0s  the todo \"Task to delete\" offers a Delete button\n  step 7/9  ok  0.1s  the todo \"Task to delete\" is deleted\n  step 8/9  ok  0.0s  the todo list does not show \"Task to delete\"\n  step 9/9  ok  0.0s  the todo list is empty\nscenario 12/23  features/deleting-todos.feature:43  should delete specific todo from multiple\n  step 1/12  ok  0.3s  the TodoMVC app is open\n  step 2/12  ok  0.0s  the todo \"Task 1\" is added\n  step 3/12  ok  0.0s  the todo \"Task 2\" is added\n  step 4/12  ok  0.0s  the todo \"Task 3\" is added\n  step 5/12  ok  0.0s  the todo list shows \"Task 1\"\n  step 6/12  ok  0.0s  the todo list shows \"Task 2\"\n  step 7/12  ok  0.0s  the todo list shows \"Task 3\"\n  step 8/12  ok  0.0s  the counter reads \"3 items left\"\n  step 9/12  ok  0.1s  the todo \"Task 2\" is deleted\n  step 10/12  ok  0.0s  the todo list shows \"Task 1\"\n  step 11/12  ok  0.0s  the todo list shows \"Task 3\"\n  step 12/12  ok  0.0s  the counter reads \"2 items left\"\nscenario 13/23  features/editing-todos.feature:9  should edit todo by double-clicking\n  step 1/9  ok  0.3s  the TodoMVC app is open\n  step 2/9  ok  0.0s  the todo \"Buy milk\" is added\n  step 3/9  ok  0.0s  the todo list shows \"Buy milk\"\n  step 4/9  ok  0.0s  the todo \"Buy milk\" is opened for editing\n  step 5/9  ok  0.0s  the edit box is visible\n  step 6/9  ok  0.0s  the edit box holds \"Buy milk\"\n  step 7/9  ok  0.0s  \"Buy organic milk\" is typed into the edit box\n  step 8/9  ok  0.0s  Enter is pressed in the edit box\n  step 9/9  ok  0.0s  the todo list shows \"Buy organic milk\"\nscenario 14/23  features/editing-todos.feature:19  should cancel edit on escape\n  step 1/8  ok  0.3s  the TodoMVC app is open\n  step 2/8  ok  0.0s  the todo \"Original text\" is added\n  step 3/8  ok  0.0s  the todo list shows \"Original text\"\n  step 4/8  ok  0.0s  the todo \"Original text\" is opened for editing\n  step 5/8  ok  0.0s  the edit box holds \"Original text\"\n  step 6/8  ok  0.0s  \"Modified text\" is typed into the edit box\n  step 7/8  ok  0.0s  Escape is pressed in the edit box\n  step 8/8  ok  0.0s  the todo list shows \"Original text\"\nscenario 15/23  features/editing-todos.feature:28  should delete todo when edited to empty\n  step 1/10  ok  0.3s  the TodoMVC app is open\n  step 2/10  ok  0.0s  the todo \"Temporary task\" is added\n  step 3/10  ok  0.0s  the todo list shows \"Temporary task\"\n  step 4/10  ok  0.0s  the counter reads \"1 item left\"\n  step 5/10  ok  0.0s  the todo \"Temporary task\" is opened for editing\n  step 6/10  ok  0.0s  the edit box is visible\n  step 7/10  ok  0.0s  \"\" is typed into the edit box\n  step 8/10  ok  0.0s  Enter is pressed in the edit box\n  step 9/10  ok  0.0s  the todo list does not show \"Temporary task\"\n  step 10/10  ok  0.0s  the todo list is empty\nscenario 16/23  features/editing-todos.feature:39  should save edit on blur\n  step 1/6  ok  0.3s  the TodoMVC app is open\n  step 2/6  ok  0.0s  the todo \"Call dentist\" is added\n  step 3/6  ok  0.0s  the todo \"Call dentist\" is opened for editing\n  step 4/6  ok  0.0s  \"Schedule dentist appointment\" is typed into the edit box\n  step 5/6  ok  0.0s  the page heading is clicked\n  step 6/6  ok  0.0s  the todo list shows \"Schedule dentist appointment\"\nscenario 17/23  features/editing-todos.feature:46  should trim whitespace when editing\n  step 1/8  ok  0.3s  the TodoMVC app is open\n  step 2/8  ok  0.0s  the todo \"Original task\" is added\n  step 3/8  ok  0.0s  the todo list shows \"Original task\"\n  step 4/8  ok  0.0s  the todo \"Original task\" is opened for editing\n  step 5/8  ok  0.0s  \"   Edited task   \" is typed into the edit box\n  step 6/8  ok  0.0s  the edit box holds \"   Edited task   \"\n  step 7/8  ok  0.0s  Enter is pressed in the edit box\n  step 8/8  ok  0.0s  the todo list shows \"Edited task\"\nscenario 18/23  features/filtering-todos.feature:9  should filter active todos\n  step 1/16  ok  0.3s  the TodoMVC app is open\n  step 2/16  ok  0.0s  the todo \"Active 1\" is added\n  step 3/16  ok  0.0s  the todo \"Active 2\" is added\n  step 4/16  ok  0.0s  the todo \"Will complete\" is added\n  step 5/16  ok  0.0s  the todo list shows \"Active 1\"\n  step 6/16  ok  0.0s  the todo list shows \"Active 2\"\n  step 7/16  ok  0.0s  the todo list shows \"Will complete\"\n  step 8/16  ok  0.0s  the todo \"Will complete\" is completed\n  step 9/16  ok  0.0s  the todo \"Will complete\" is marked complete\n  step 10/16  ok  0.0s  the counter reads \"2 items left\"\n  step 11/16  ok  0.0s  the \"Active\" filter is selected\n  step 12/16  ok  0.0s  the URL ends with \"#/active\"\n  step 13/16  ok  0.0s  the todo list shows \"Active 1\"\n  step 14/16  ok  0.0s  the todo list shows \"Active 2\"\n  step 15/16  ok  0.0s  the todo list does not show \"Will complete\"\n  step 16/16  ok  0.0s  the \"Active\" filter link is visible\nscenario 19/23  features/todo-creation.feature:11  Add a single todo\n  step 1/9  ok  0.3s  the TodoMVC app is open\n  step 2/9  ok  0.0s  the new-todo field is visible\n  step 3/9  ok  0.0s  \"Buy groceries\" is typed into the new-todo field\n  step 4/9  ok  0.0s  the new-todo field holds \"Buy groceries\"\n  step 5/9  ok  0.0s  Enter is pressed in the new-todo field\n  step 6/9  ok  0.0s  the todo list shows \"Buy groceries\"\n  step 7/9  ok  0.0s  the new-todo field holds \"\"\n  step 8/9  ok  0.0s  the counter reads \"1 item left\"\n  step 9/9  ok  0.0s  the todo \"Buy groceries\" is not marked complete\nscenario 20/23  features/todo-creation.feature:21  Add multiple todos\n  step 1/12  ok  0.3s  the TodoMVC app is open\n  step 2/12  ok  0.0s  the new-todo field is visible\n  step 3/12  ok  0.0s  the todo \"Buy groceries\" is added\n  step 4/12  ok  0.0s  the todo list shows \"Buy groceries\"\n  step 5/12  ok  0.0s  the todo \"Walk the dog\" is added\n  step 6/12  ok  0.0s  the todo list shows \"Walk the dog\"\n  step 7/12  ok  0.0s  the todo \"Read a book\" is added\n  step 8/12  ok  0.0s  the todo list shows \"Read a book\"\n  step 9/12  ok  0.0s  the todo list shows \"Buy groceries\"\n  step 10/12  ok  0.0s  the todo list shows \"Walk the dog\"\n  step 11/12  ok  0.0s  the counter reads \"3 items left\"\n  step 12/12  ok  0.0s  the todo \"Buy groceries\" is not marked complete\nscenario 21/23  features/todo-creation.feature:34  Add todo with special characters\n  step 1/5  ok  0.3s  the TodoMVC app is open\n  step 2/5  ok  0.0s  the new-todo field is visible\n  step 3/5  ok  0.0s  the todo \"Buy @groceries & supplies (urgent!)\" is added\n  step 4/5  ok  0.0s  the todo list shows \"Buy @groceries & supplies (urgent!)\"\n  step 5/5  ok  0.0s  the counter reads \"1 item left\"\nscenario 22/23  features/todo-creation.feature:40  Prevent adding empty todo\n  step 1/6  ok  0.3s  the TodoMVC app is open\n  step 2/6  ok  0.0s  the new-todo field is visible\n  step 3/6  ok  0.0s  the new-todo field is clicked\n  step 4/6  ok  0.0s  Enter is pressed in the new-todo field\n  step 5/6  ok  0.0s  the todo list is empty\n  step 6/6  ok  0.0s  the new-todo field holds \"\"\nscenario 23/23  features/todo-creation.feature:47  Prevent adding whitespace-only todo\n  step 1/4  ok  0.3s  the TodoMVC app is open\n  step 2/4  ok  0.0s  the new-todo field is visible\n  step 3/4  ok  0.0s  the todo \"   \" is added\n  step 4/4  ok  0.0s  the todo list is empty\nsteps     .nukadoko/records/steps/      202\nscenarios .nukadoko/records/scenarios/  23\nallure    .nukadoko/export/allure-results/\nmessages  .nukadoko/export/messages.run-20260822-224139-nrl4.ndjson\n23 scenarios: 23 passed, 0 failed  (11s)\n",
+    "pass": true
+  },
+  "check": {
+    "command": "nuka check --json",
+    "exitCode": 0,
+    "json": {
+      "errors": [],
+      "warnings": []
+    },
+    "stderr": "",
+    "pass": true
+  },
+  "tend": {
+    "command": "nuka tend --json",
+    "exitCode": 0,
+    "json": {
+      "errors": [],
+      "notes": [
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"clear-completed-is-offered\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "clear-completed-is-offered"
+        },
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"clear-completed-todos\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "clear-completed-todos"
+        },
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"complete-todo\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "complete-todo"
+        },
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"filter-link-is-visible\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "filter-link-is-visible"
+        },
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"focus-new-todo-field\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "focus-new-todo-field"
+        },
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"new-todo-field-is-focused\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "new-todo-field-is-focused"
+        },
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"new-todo-field-is-visible\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "new-todo-field-is-visible"
+        },
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"press-escape-in-todo-editor\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "press-escape-in-todo-editor"
+        },
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"reopen-todo\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "reopen-todo"
+        },
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"select-todo-filter\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "select-todo-filter"
+        },
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"todo-editor-is-visible\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "todo-editor-is-visible"
+        },
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"todo-is-completed\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "todo-is-completed"
+        },
+        {
+          "code": "step-rationale-missing",
+          "message": "Step \"type-in-todo-editor\" has no rationale: description says what it does, but nothing here says why it's built this way or what was rejected, which is what an agent needs before deciding it may rewrite it.",
+          "step": "type-in-todo-editor"
+        },
+        {
+          "code": "feature-never-signed",
+          "message": "features/adding-todos.feature has never been accepted: no acceptance record names it in its feature: frontmatter. Once a run of it is green, nuka accept features/adding-todos.feature freezes that run as its first sign-off.",
+          "file": "features/adding-todos.feature"
+        },
+        {
+          "code": "feature-never-signed",
+          "message": "features/completing-todos.feature has never been accepted: no acceptance record names it in its feature: frontmatter. Once a run of it is green, nuka accept features/completing-todos.feature freezes that run as its first sign-off.",
+          "file": "features/completing-todos.feature"
+        },
+        {
+          "code": "feature-never-signed",
+          "message": "features/deleting-todos.feature has never been accepted: no acceptance record names it in its feature: frontmatter. Once a run of it is green, nuka accept features/deleting-todos.feature freezes that run as its first sign-off.",
+          "file": "features/deleting-todos.feature"
+        },
+        {
+          "code": "feature-never-signed",
+          "message": "features/editing-todos.feature has never been accepted: no acceptance record names it in its feature: frontmatter. Once a run of it is green, nuka accept features/editing-todos.feature freezes that run as its first sign-off.",
+          "file": "features/editing-todos.feature"
+        },
+        {
+          "code": "feature-never-signed",
+          "message": "features/filtering-todos.feature has never been accepted: no acceptance record names it in its feature: frontmatter. Once a run of it is green, nuka accept features/filtering-todos.feature freezes that run as its first sign-off.",
+          "file": "features/filtering-todos.feature"
+        },
+        {
+          "code": "feature-never-signed",
+          "message": "features/todo-creation.feature has never been accepted: no acceptance record names it in its feature: frontmatter. Once a run of it is green, nuka accept features/todo-creation.feature freezes that run as its first sign-off.",
+          "file": "features/todo-creation.feature"
+        }
+      ],
+      "summary": {
+        "typedSteps": 33,
+        "compatSteps": 0,
+        "compatStepNames": [],
+        "rationale": {
+          "declared": 20,
+          "total": 33
+        },
+        "describe": {
+          "declared": 67,
+          "total": 67
+        },
+        "scannedFeatureDirs": [
+          "features"
+        ],
+        "readOnlySteps": 17
+      }
+    },
+    "stderr": "",
+    "pass": true
+  },
+  "pass": true
+}
