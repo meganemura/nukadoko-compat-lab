@@ -27,8 +27,8 @@ as a column.
   suite has to pass both times, with the same test count, or the run
   does not count as a pass.
 
-Every corpus this lab has run so far is self-contained: nothing it does
-reaches a network address outside the corpus's own working copy.
+Every compat-door corpus this lab runs is self-contained: nothing it
+does reaches a network address outside the corpus's own working copy.
 `todomvc`, the one target through the playwright door, breaks that on
 purpose. It is `microsoft/playwright`'s own `examples/todomvc`, and it
 drives a real browser against a real, externally hosted page
