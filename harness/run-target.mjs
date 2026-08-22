@@ -259,6 +259,15 @@ function main() {
     throw new Error(`unknown target "${name}" (see harness/targets.json)`);
   }
   const id = targetId(target);
+  // Only the compat door has a mechanical transform this script can apply
+  // (rewrite one import specifier). A target declaring any other door is
+  // refused by name rather than silently run through the compat path,
+  // which would write a result row claiming a measurement that never ran.
+  if (target.door !== "compat") {
+    throw new Error(
+      `target "${name}" declares door ${JSON.stringify(target.door)}; this harness only runs the "compat" door`,
+    );
+  }
 
   // npm track only: `<semver>.json` is persistent, one per released
   // version, never regenerated once it exists (task spec "制約・前提":
@@ -303,6 +312,7 @@ function main() {
   const result = {
     targetId: id,
     targetName: target.name,
+    door: target.door,
     track,
     generatedAt: new Date().toISOString(),
     ...versionInfo,

@@ -1,6 +1,7 @@
 {
   "targets": [
     {
+      "door": "compat",
       "name": "esm-node",
       "submodule": "cucumber-js-examples",
       "subpath": "esm-node",
@@ -8,6 +9,7 @@
       "expectedScenarioCount": 1
     },
     {
+      "door": "compat",
       "name": "typescript-node-esm",
       "submodule": "cucumber-js-examples",
       "subpath": "typescript-node-esm",
@@ -15,6 +17,7 @@
       "expectedScenarioCount": 1
     },
     {
+      "door": "compat",
       "name": "cucumber7-ts-starter",
       "submodule": "cucumber7-ts-starter",
       "subpath": ".",
