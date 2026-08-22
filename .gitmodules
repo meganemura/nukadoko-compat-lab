@@ -4,3 +4,7 @@
 [submodule "corpora/cucumber7-ts-starter"]
 	path = corpora/cucumber7-ts-starter
 	url = https://github.com/hdorgeval/cucumber7-ts-starter.git
+[submodule "corpora/playwright"]
+	path = corpora/playwright
+	url = https://github.com/microsoft/playwright.git
+	shallow = true
