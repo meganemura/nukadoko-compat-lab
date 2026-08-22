@@ -8,3 +8,9 @@
 /.nukadoko-work/
 
 /node_modules/
+
+# scratch working copy for the playwright door's one-off extraction
+# experiment: a corpus copy plus a locally built nukadoko. What that
+# experiment produces gets committed under overlays/ instead, so this
+# directory itself is throwaway.
+/.experiment-todomvc/
