@@ -57,6 +57,10 @@ initial declaration, a pattern Node can't statically resolve to a named
 
 ## Two tracks
 
+A track is which build of nukadoko a target runs against, so it is a
+separate axis from the door: any target, whichever door it uses, can be
+measured on either track.
+
 - **npm track** (`--track=npm`): installs `nukadoko@latest` from the npm
   registry — what an actual adopter would get today.
 - **main track** (`--track=main`): clones
