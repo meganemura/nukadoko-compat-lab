@@ -14,8 +14,8 @@
 // it in) -> run `nuka run`/`check`/`tend` against the copy -> write one
 // result JSON to results/<target-id>/<file>.json.
 //
-// Deviation from the task spec's literal `nuka run --json`: `nuka run` (see
-// nukadoko src/cli/run-cli.ts's `runCommand` builder) has no `--json`
+// `nuka run` is invoked without `--json`, unlike `check`/`tend` here: it
+// (see nukadoko src/cli/run-cli.ts's `runCommand` builder) has no `--json`
 // option — only `check`/`tend` do. Passing `--json` to `run` fails yargs'
 // `.strict()` parse (exit 1, nothing runs) rather than requesting JSON.
 // `nuka run` already writes one JSON scenario record per line to stdout
@@ -263,10 +263,12 @@ function resultsPathFor(id, track, versionInfo) {
 
 function runCompatDoor(target, id, track) {
   // npm track only: `<semver>.json` is persistent, one per released
-  // version, never regenerated once it exists (task spec "制約・前提":
-  // "初回検出時に自動複製、以後上書きしない"). main track's own
-  // `main.json` always overwrites (checked further down, after the
-  // commitSha is known) since it tracks a moving target.
+  // version, written the first time that version is seen and never
+  // regenerated after, so a row stays the measurement that version
+  // actually got rather than one taken later against a corpus or a
+  // machine that has moved on. main track's own `main.json` always
+  // overwrites (checked further down, after the commitSha is known)
+  // since it tracks a moving target.
   if (track === "npm") {
     const version = npmLatestVersion();
     const existingPath = resultsPathFor(id, track, { nukadokoVersion: version });
