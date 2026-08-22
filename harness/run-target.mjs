@@ -22,6 +22,16 @@
 // unconditionally (src/cli/run.ts), so that stream is captured and parsed
 // the same way `--json` output from `check`/`tend` is, and `run` is invoked
 // without the flag. Recorded here rather than guessed past silently.
+//
+// A door named "playwright" runs a different sequence: the corpus is a
+// Playwright Test suite with no cucumber-js import to rewrite, so instead
+// of `rewrite-import.mjs`, a hand-written overlay under `overlays/<target-
+// id>/` is copied onto the working copy. That target's own `playwright
+// test` is run twice: once against the untouched corpus (baseline), and
+// again once nukadoko is installed and the overlay applied. A baseline
+// failure never reaches nukadoko at all, since this target's suite reaches
+// an externally hosted demo site; that failure is recorded as
+// `corpusUnavailable` rather than a FAIL this project's own commit caused.
 
 import { execFileSync, spawnSync } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
@@ -251,24 +261,7 @@ function resultsPathFor(id, track, versionInfo) {
   return path.join(RESULTS_DIR, id, fileName);
 }
 
-function main() {
-  const { name, track } = parseArgs(process.argv.slice(2));
-  const targets = loadTargets();
-  const target = targets.find((candidate) => candidate.name === name);
-  if (!target) {
-    throw new Error(`unknown target "${name}" (see harness/targets.json)`);
-  }
-  const id = targetId(target);
-  // Only the compat door has a mechanical transform this script can apply
-  // (rewrite one import specifier). A target declaring any other door is
-  // refused by name rather than silently run through the compat path,
-  // which would write a result row claiming a measurement that never ran.
-  if (target.door !== "compat") {
-    throw new Error(
-      `target "${name}" declares door ${JSON.stringify(target.door)}; this harness only runs the "compat" door`,
-    );
-  }
-
+function runCompatDoor(target, id, track) {
   // npm track only: `<semver>.json` is persistent, one per released
   // version, never regenerated once it exists (task spec "制約・前提":
   // "初回検出時に自動複製、以後上書きしない"). main track's own
@@ -353,6 +346,315 @@ function main() {
   );
   console.log(`check: exit=${checkResult.exitCode} pass=${result.check.pass}`);
   console.log(`tend: exit=${tendResult.exitCode} pass=${result.tend.pass}`);
+}
+
+const OVERLAYS_DIR = path.join(REPO_ROOT, "overlays");
+// Files in an overlay's own top level that describe the overlay itself
+// rather than belonging to the working copy it gets applied to.
+const OVERLAY_META_FILES = new Set(["LICENSE", "NOTICE", "README.md"]);
+
+// Pinned rather than left to whatever `npm install` would resolve today:
+// 1.61.1 is nukadoko's own `playwright` dependency version (package.json),
+// so the chromium already downloaded for nukadoko's own install is reused
+// here too, and no second browser download is triggered.
+const PLAYWRIGHT_TEST_VERSION = "1.61.1";
+// The version the overlay's own package.json already names as its floor
+// (`"dotenv": "^17.2.3"`), pinned exactly for a reproducible install.
+const DOTENV_VERSION = "17.2.3";
+
+function preparePlaywrightWorkingCopy(target, track) {
+  const source = copyCorpusSubpath(target);
+  const workDir = path.join(WORK_DIR, targetId(target), track);
+  rmSync(workDir, { recursive: true, force: true });
+  mkdirSync(workDir, { recursive: true });
+  // No package.json/config scaffolding and no import rewrite here (unlike
+  // `prepareWorkingCopy` above): the baseline run right after this needs
+  // the corpus exactly as published, since a scaffolding change could be
+  // mistaken for the overlay's own effect.
+  cpDir(source, workDir, new Set(["node_modules", ".git"]));
+  return workDir;
+}
+
+function copyOverlayDir(source, dest, isRoot) {
+  for (const entry of readdirSync(source, { withFileTypes: true })) {
+    if (isRoot && OVERLAY_META_FILES.has(entry.name)) continue;
+    const from = path.join(source, entry.name);
+    const to = path.join(dest, entry.name);
+    if (entry.isDirectory()) {
+      mkdirSync(to, { recursive: true });
+      copyOverlayDir(from, to, false);
+    } else if (entry.isFile()) {
+      writeFileSync(to, readFileSync(from));
+    }
+  }
+}
+
+function applyOverlay(target, workDir) {
+  const overlayDir = path.join(OVERLAYS_DIR, targetId(target));
+  if (!existsSync(overlayDir)) {
+    throw new Error(`overlay not found: ${overlayDir}`);
+  }
+  copyOverlayDir(overlayDir, workDir, true);
+}
+
+function installPlaywrightTestDeps(workDir) {
+  const result = spawnSync(
+    "npm",
+    [
+      "install",
+      `@playwright/test@${PLAYWRIGHT_TEST_VERSION}`,
+      `dotenv@${DOTENV_VERSION}`,
+      "--no-save",
+      "--no-package-lock",
+      "--no-audit",
+      "--no-fund",
+    ],
+    { cwd: workDir, encoding: "utf8", env: NO_BROWSER_DOWNLOAD_ENV },
+  );
+  if (result.status !== 0) {
+    throw new Error(
+      `npm install @playwright/test@${PLAYWRIGHT_TEST_VERSION} dotenv@${DOTENV_VERSION} failed:\n${result.stdout}\n${result.stderr}`,
+    );
+  }
+}
+
+function tail(text, maxChars = 4000) {
+  if (!text) return "";
+  return text.length > maxChars ? text.slice(-maxChars) : text;
+}
+
+// `--reporter=json` overrides the corpus's own `playwright.config.ts`
+// (which lists `html` + `list`), so this always gets one JSON object on
+// stdout to parse rather than a mix of an HTML report directory and
+// terminal-formatted lines.
+function runPlaywrightTestSuite(workDir) {
+  const result = spawnSync("npx", ["playwright", "test", "--project=chromium", "--reporter=json"], {
+    cwd: workDir,
+    encoding: "utf8",
+    env: NO_BROWSER_DOWNLOAD_ENV,
+    maxBuffer: 64 * 1024 * 1024,
+  });
+  const parsed = parseJsonStdout(result.stdout);
+  const stats = parsed?.stats ?? null;
+  const testCount = stats ? stats.expected + stats.unexpected + stats.skipped + (stats.flaky ?? 0) : null;
+  return {
+    command: "npx playwright test --project=chromium --reporter=json",
+    exitCode: result.status ?? 1,
+    stats,
+    testCount,
+    stdoutTail: tail(result.stdout),
+    stderrTail: tail(result.stderr),
+  };
+}
+
+// Every `import ... from "specifier"` in a file, value or type-only alike
+// (a type-only import still names the module it wants). Good enough for
+// this door's own overlay files, not a general parser.
+function extractImportSpecifiers(source) {
+  const specifiers = [];
+  const re = /import\s+(?:[^'";]+?)\s+from\s+["']([^"']+)["']|import\s+["']([^"']+)["']/g;
+  let match;
+  while ((match = re.exec(source))) {
+    specifiers.push(match[1] ?? match[2]);
+  }
+  return specifiers;
+}
+
+function collectFiles(dir, predicate, found = []) {
+  if (!existsSync(dir)) return found;
+  for (const entry of readdirSync(dir, { withFileTypes: true })) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      collectFiles(full, predicate, found);
+    } else if (entry.isFile() && predicate(full)) {
+      found.push(full);
+    }
+  }
+  return found;
+}
+
+// The arrow this door has to prove one way every run: the Playwright side
+// never imports nukadoko, and its one shared layer imports nothing but
+// Playwright and zod. Checked mechanically here rather than trusted from
+// the overlay's own README, since the overlay is exactly what gets edited
+// if this ever needs to change.
+function checkArrows(workDir) {
+  const violations = [];
+  const testsDir = path.join(workDir, "tests");
+
+  const specFiles = collectFiles(testsDir, (file) => file.endsWith(".spec.ts"));
+  const fixturesFile = path.join(testsDir, "fixtures.ts");
+  const mustNotImportNukadoko = existsSync(fixturesFile) ? [...specFiles, fixturesFile] : specFiles;
+  for (const file of mustNotImportNukadoko) {
+    if (extractImportSpecifiers(readFileSync(file, "utf8")).includes("nukadoko")) {
+      violations.push(`${path.relative(workDir, file)} imports "nukadoko"`);
+    }
+  }
+
+  const sharedLib = path.join(testsDir, "lib", "todo.ts");
+  if (!existsSync(sharedLib)) {
+    violations.push("tests/lib/todo.ts not found");
+  } else {
+    const allowed = new Set(["@playwright/test", "zod"]);
+    for (const specifier of extractImportSpecifiers(readFileSync(sharedLib, "utf8"))) {
+      if (!allowed.has(specifier)) {
+        violations.push(`tests/lib/todo.ts imports ${JSON.stringify(specifier)} (only @playwright/test and zod are allowed)`);
+      }
+    }
+  }
+
+  return { ok: violations.length === 0, violations };
+}
+
+function runPlaywrightDoor(target, id, track) {
+  // The npm track's result file name needs the resolved version up front:
+  // baseline can fail before nukadoko is ever installed, and the
+  // `corpusUnavailable` result still has to land at the path a passing run
+  // would use.
+  let versionInfo = track === "npm" ? { nukadokoVersion: npmLatestVersion() } : {};
+
+  if (track === "npm") {
+    const existingPath = resultsPathFor(id, track, versionInfo);
+    if (existsSync(existingPath)) {
+      console.log(`${existingPath} already exists for nukadoko@${versionInfo.nukadokoVersion}; not regenerating.`);
+      return;
+    }
+  }
+
+  const workDir = preparePlaywrightWorkingCopy(target, track);
+  console.log(`working copy: ${workDir}`);
+
+  installPlaywrightTestDeps(workDir);
+
+  const baseline = runPlaywrightTestSuite(workDir);
+  console.log(`baseline playwright test: exit=${baseline.exitCode} tests=${baseline.testCount}`);
+
+  // This target's suite reaches an externally hosted demo site
+  // (https://demo.playwright.dev/todomvc). nukadoko is not installed yet
+  // at this point, so a baseline failure here cannot be this project's own
+  // doing; it is recorded as `corpusUnavailable` and no PASS/FAIL line is
+  // written, rather than charging a dead demo site to nukadoko's account.
+  if (baseline.exitCode !== 0) {
+    const result = {
+      targetId: id,
+      targetName: target.name,
+      door: target.door,
+      track,
+      generatedAt: new Date().toISOString(),
+      corpusUnavailable: true,
+      note:
+        "baseline `playwright test` failed against the unmodified corpus, before nukadoko was installed. " +
+        "Recorded as corpusUnavailable, not a nukadoko-caused FAIL, since this target reaches an externally " +
+        "hosted demo site (https://demo.playwright.dev/todomvc).",
+      playwrightBaseline: baseline,
+    };
+    const outPath = resultsPathFor(id, track, versionInfo);
+    mkdirSync(path.dirname(outPath), { recursive: true });
+    writeFileSync(outPath, JSON.stringify(result, null, 2) + "\n");
+    console.log(`corpusUnavailable: wrote ${outPath} (no PASS/FAIL line; baseline could not reach the demo site)`);
+    return;
+  }
+
+  applyOverlay(target, workDir);
+
+  const installed = track === "npm" ? installNpmTrack(workDir) : installMainTrack(workDir);
+  versionInfo = { ...versionInfo, ...installed };
+  const cliPath = nukaCliPath(workDir);
+  if (!existsSync(cliPath)) {
+    throw new Error(`nukadoko CLI not found at ${cliPath} after install`);
+  }
+
+  const afterOverlay = runPlaywrightTestSuite(workDir);
+  const suitePass = afterOverlay.exitCode === 0 && afterOverlay.testCount === baseline.testCount;
+  console.log(`overlay playwright test: exit=${afterOverlay.exitCode} tests=${afterOverlay.testCount} pass=${suitePass}`);
+
+  const runResult = runNuka(cliPath, ["run", "features"], workDir);
+  const scenarios = runResult.exitCode === 0 || runResult.stdout.length > 0 ? parseRunStdout(runResult.stdout) : [];
+  const scenarioCount = scenarios.length;
+  const runPass = runResult.exitCode === 0 && scenarioCount >= target.expectedScenarioCount;
+
+  const checkResult = runNuka(cliPath, ["check", "--json"], workDir);
+  const tendResult = runNuka(cliPath, ["tend", "--json"], workDir);
+
+  const arrows = checkArrows(workDir);
+
+  const result = {
+    targetId: id,
+    targetName: target.name,
+    door: target.door,
+    track,
+    generatedAt: new Date().toISOString(),
+    ...versionInfo,
+    featuresDir: "features",
+    expectedScenarioCount: target.expectedScenarioCount,
+    expectedPlaywrightTests: target.expectedPlaywrightTests,
+    playwrightBaseline: baseline,
+    playwrightAfterOverlay: { ...afterOverlay, pass: suitePass },
+    arrows,
+    run: {
+      command: "nuka run features",
+      note: "no --json (run has none, see this file's own header); stdout is one JSON scenario record per line, parsed below",
+      exitCode: runResult.exitCode,
+      scenarioCount,
+      scenarios,
+      stderr: runResult.stderr,
+      pass: runPass,
+    },
+    check: {
+      command: "nuka check --json",
+      exitCode: checkResult.exitCode,
+      json: parseJsonStdout(checkResult.stdout),
+      stderr: checkResult.stderr,
+      pass: checkResult.exitCode === 0,
+    },
+    tend: {
+      command: "nuka tend --json",
+      exitCode: tendResult.exitCode,
+      json: parseJsonStdout(tendResult.stdout),
+      stderr: tendResult.stderr,
+      pass: tendResult.exitCode === 0,
+    },
+  };
+  result.pass = suitePass && arrows.ok && result.run.pass && result.check.pass && result.tend.pass;
+
+  const outPath = resultsPathFor(id, track, versionInfo);
+  mkdirSync(path.dirname(outPath), { recursive: true });
+  writeFileSync(outPath, JSON.stringify(result, null, 2) + "\n");
+  console.log(`wrote ${outPath}`);
+  console.log(`arrows: ok=${arrows.ok}${arrows.ok ? "" : ` violations=${arrows.violations.join("; ")}`}`);
+  console.log(
+    `run: exit=${runResult.exitCode} scenarios=${scenarioCount}/${target.expectedScenarioCount} pass=${runPass}`,
+  );
+  console.log(`check: exit=${checkResult.exitCode} pass=${result.check.pass}`);
+  console.log(`tend: exit=${tendResult.exitCode} pass=${result.tend.pass}`);
+}
+
+function main() {
+  const { name, track } = parseArgs(process.argv.slice(2));
+  const targets = loadTargets();
+  const target = targets.find((candidate) => candidate.name === name);
+  if (!target) {
+    throw new Error(`unknown target "${name}" (see harness/targets.json)`);
+  }
+  const id = targetId(target);
+
+  if (target.door === "playwright") {
+    runPlaywrightDoor(target, id, track);
+    return;
+  }
+
+  // Only the compat door has a mechanical transform this script can apply
+  // on its own (rewrite one import specifier); the playwright door is
+  // handled above. Any other declared door is refused by name rather than
+  // silently run through the compat path, which would write a result row
+  // claiming a measurement that never ran.
+  if (target.door !== "compat") {
+    throw new Error(
+      `target "${name}" declares door ${JSON.stringify(target.door)}; this harness only runs the "compat" and "playwright" doors`,
+    );
+  }
+
+  runCompatDoor(target, id, track);
 }
 
 main();

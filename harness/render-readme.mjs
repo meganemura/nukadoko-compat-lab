@@ -13,6 +13,14 @@
 // time (harness/run-target.mjs never overwrites one once written); every
 // one found gets its own row, newest semver first. `main.json` always
 // overwrites in place, so it is always exactly one row per target.
+//
+// A result file can carry `corpusUnavailable: true` instead of a measured
+// pass/fail (the playwright door's own baseline check, run before nukadoko
+// is ever installed, against a target that reaches an externally hosted
+// site). That file never becomes a table row: a row is a claim that a
+// measurement ran, and this one did not. It surfaces instead as one line
+// below the table, so a dead demo site stays visible without being
+// charged to nukadoko's own account.
 
 import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
@@ -78,26 +86,53 @@ function statusEmoji(pass) {
   return pass ? "PASS" : "FAIL";
 }
 
+// Only the playwright door measures a suite before and after the overlay
+// (compat's own transform is one import specifier, not a whole suite run).
+// Every other door's row reads "n/a" here rather than leaving the column
+// blank, so a missing measurement and a door that doesn't take one stay
+// visually distinct.
+function suiteColumn(data) {
+  const before = data.playwrightBaseline?.testCount;
+  const after = data.playwrightAfterOverlay?.testCount;
+  if (before === undefined || before === null || after === undefined || after === null) return "n/a";
+  return `${before} -> ${after}`;
+}
+
 function renderTable(rows) {
   if (rows.length === 0) {
     return "_No results yet — run `node harness/run-target.mjs <target> --track=npm|main` first._\n";
   }
   const header = [
-    "| target | door | track | version / commit | run (exit, scenarios) | check (exit) | tend (exit) | overall |",
-    "|---|---|---|---|---|---|---|---|",
+    "| target | door | track | version / commit | suite (before -> after) | run (exit, scenarios) | check (exit) | tend (exit) | overall |",
+    "|---|---|---|---|---|---|---|---|---|",
   ];
   const lines = rows.map(({ targetId, data }) => {
     const versionCol = data.track === "npm" ? data.nukadokoVersion : (data.commitSha ?? "").slice(0, 12);
     const runCol = `${data.run.exitCode} (${data.run.scenarioCount}/${data.expectedScenarioCount})`;
-    return `| ${targetId} | ${doorOf(targetId, data)} | ${data.track} | ${versionCol} | ${runCol} | ${data.check.exitCode} | ${data.tend.exitCode} | ${statusEmoji(data.pass)} |`;
+    return `| ${targetId} | ${doorOf(targetId, data)} | ${data.track} | ${versionCol} | ${suiteColumn(data)} | ${runCol} | ${data.check.exitCode} | ${data.tend.exitCode} | ${statusEmoji(data.pass)} |`;
   });
   return [...header, ...lines].join("\n") + "\n";
 }
 
+// One line per result file currently sitting at `corpusUnavailable: true`
+// (see this file's own header). `main.json` overwrites in place, so this
+// only ever lists what is unavailable right now, not every time it ever
+// happened.
+function renderUnavailableNote(rows) {
+  if (rows.length === 0) return "";
+  const lines = rows.map(
+    ({ targetId, data }) => `- ${data.generatedAt}: ${targetId} (${data.track}) was corpusUnavailable.`,
+  );
+  return `\n${lines.join("\n")}\n`;
+}
+
 function main() {
   const rows = loadResultFiles();
-  const table = renderTable(rows);
-  const block = `${START_MARKER}\n\n${table}\n${END_MARKER}`;
+  const tableRows = rows.filter(({ data }) => data.corpusUnavailable !== true);
+  const unavailableRows = rows.filter(({ data }) => data.corpusUnavailable === true);
+  const table = renderTable(tableRows);
+  const unavailableNote = renderUnavailableNote(unavailableRows);
+  const block = `${START_MARKER}\n\n${table}${unavailableNote}\n${END_MARKER}`;
 
   let readme = "";
   try {

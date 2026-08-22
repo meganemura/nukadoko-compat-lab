@@ -24,6 +24,15 @@
       "featureGlob": "features/**/*.feature",
       "featuresDir": ".",
       "expectedScenarioCount": 2
+    },
+    {
+      "door": "playwright",
+      "name": "todomvc",
+      "submodule": "playwright",
+      "subpath": "examples/todomvc",
+      "featureGlob": "features/**/*.feature",
+      "expectedScenarioCount": 23,
+      "expectedPlaywrightTests": 24
     }
   ]
 }
